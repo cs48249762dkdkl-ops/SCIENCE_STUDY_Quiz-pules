@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SCIENCE STUDY | 과학 공부 앱</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                Arial,
+                "Noto Sans KR",
+                sans-serif;
+            background: #f5f5f2;
+            color: #111;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(245, 245, 242, 0.95);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            margin-top: 4px;
+
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+
+            color: #666;
+        }
+
+        .back-link {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        main {
+            width: min(1100px, 88%);
+            margin: 0 auto;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 560px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 80px 0;
+        }
+
+        .hero-label {
+            margin-bottom: 20px;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+
+            color: #555;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: clamp(56px, 9vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 strong {
+            font-weight: 800;
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            margin-top: 35px;
+
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* =========================
+           SUBJECTS
+        ========================== */
+
+        .section {
+            padding: 100px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .section-title {
+            margin: 0 0 12px;
+
+            font-size: 38px;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            margin: 0 0 45px;
+
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .subject-card {
+            min-height: 220px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 30px;
+
+            background: #fff;
+            border: 1px solid #ddd;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .subject-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #888;
+        }
+
+        .subject-card h3 {
+            margin: 20px 0 8px;
+
+            font-size: 30px;
+            letter-spacing: -1px;
+        }
+
+        .subject-card p {
+            margin: 0;
+
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .subject-arrow {
+            align-self: flex-end;
+
+            font-size: 24px;
+        }
+
+        /* =========================
+           CALCULATOR
+        ========================== */
+
+        .calculator-section {
+            padding: 110px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .calculator-box {
+            padding: 50px;
+
+            background: #111;
+            color: #fff;
+        }
+
+        .calculator-box .label {
+            margin-bottom: 18px;
+
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #aaa;
+        }
+
+        .calculator-box h2 {
+            margin: 0;
+
+            font-size: clamp(36px, 6vw, 65px);
+            letter-spacing: -3px;
+        }
+
+        .calculator-box p {
+            max-width: 650px;
+
+            margin: 25px 0 35px;
+
+            color: #bbb;
+            line-height: 1.8;
+        }
+
+        .calculator-button {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            background: #fff;
+            color: #111;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .calculator-button:hover {
+            background: #ddd;
+        }
+
+        /* =========================
+           PAPER
+        ========================== */
+
+        .paper-box {
+            padding: 40px;
+
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .paper-box .paper-label {
+            margin-bottom: 15px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #777;
+        }
+
+        .paper-box h3 {
+            max-width: 800px;
+
+            margin: 0 0 18px;
+
+            font-size: 28px;
+            line-height: 1.4;
+        }
+
+        .paper-box p {
+            max-width: 800px;
+
+            margin: 0 0 25px;
+
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .paper-link {
+            display: inline-block;
+
+            font-weight: 700;
+            border-bottom: 1px solid #111;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 50px;
+            padding: 35px 7%;
+
+            border-top: 1px solid #ddd;
+
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            main {
+                width: 90%;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+                letter-spacing: -3px;
+            }
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-box {
+                padding: 30px;
+            }
+
+            .paper-box {
+                padding: 30px;
+            }
+
+        }
+
+.input-with-unit select {
+    min-width: 100px;
+    padding: 15px 12px;
+
+    border: 1px solid #555;
+
+    background: #222;
+    color: #fff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.input-with-unit select:focus {
+    border-color: #fff;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            SCIENCE STUDY
+            <span>SCIENCE LEARNING APP</span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-label">
+                APPLICATION · 13
+            </div>
+
+            <h1>
+                SCIENCE<br>
+                <strong>STUDY</strong>
+            </h1>
+
+            <p class="hero-description">
+                천문학, 물리학, 생물학, 화학 등
+                다양한 과학 이론을 배우고
+                직접 계산하며 탐구할 수 있는
+                과학 공부 앱입니다.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SUBJECTS
+        ========================== -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                SCIENCE
+            </h2>
+
+            <p class="section-description">
+                공부하고 싶은 과학 분야를 선택하세요.
+            </p>
+
+
+            <div class="subject-grid">
+
+                <a
+                    href="astronomy.html"
+                    class="subject-card"
+                >
+
+                    <div>
+                        <div class="subject-number">
+                            01 · ASTRONOMY
+                        </div>
+
+                        <h3>
+                            천문학
+                        </h3>
+
+                        <p>
+                            우주와 천체,
+                            행성 및 별에 관한 과학을 탐구합니다.
+                        </p>
+                    </div>
+
+                    <div class="subject-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="physics.html"
+                    class="subject-card"
+                >
+
+                    <div>
+                        <div class="subject-number">
+                            02 · PHYSICS
+                        </div>
+
+                        <h3>
+                            물리학
+                        </h3>
+
+                        <p>
+                            물질과 에너지,
+                            운동과 시공간의 원리를 탐구합니다.
+                        </p>
+                    </div>
+
+                    <div class="subject-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="biology.html"
+                    class="subject-card"
+                >
+
+                    <div>
+                        <div class="subject-number">
+                            03 · BIOLOGY
+                        </div>
+
+                        <h3>
+                            생물학
+                        </h3>
+
+                        <p>
+                            생명체와 생명 현상의
+                            과학적 원리를 탐구합니다.
+                        </p>
+                    </div>
+
+                    <div class="subject-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="chemistry.html"
+                    class="subject-card"
+                >
+
+                    <div>
+                        <div class="subject-number">
+                            04 · CHEMISTRY
+                        </div>
+
+                        <h3>
+                            화학
+                        </h3>
+
+                        <p>
+                            물질의 구조와 성질,
+                            화학 반응을 탐구합니다.
+                        </p>
+                    </div>
+
+                    <div class="subject-arrow">
+                        →
+                    </div>
+
+                </a>
+
+            </div>
+
+<a
+    href="geology.html"
+    class="subject-card"
+>
+    <div>
+
+        <div class="subject-number">
+            05 · GEOLOGY
+        </div>
+
+        <h3>
+            지질학
+        </h3>
+
+        <p>
+            지구의 암석과 광물,
+            광석의 생성 과정과 성질을 탐구합니다.
+        </p>
+
+    </div>
+
+    <div class="subject-arrow">
+        →
+    </div>
+
+</a>
+
+<a href="quiz.html" class="subject-card" style="margin-top: 20px;">
+    <div>
+        <div class="subject-number">06 · SCIENCE QUIZ</div>
+        <h3>과학 퀴즈</h3>
+        <p>5개 과학 분야의 문제를 풀고 채점과 해설을 확인하세요.</p>
+    </div>
+    <div class="subject-arrow">→</div>
+</a>
+
+        </section>
+
+
+        <!-- =========================
+             CALCULATOR
+        ========================== -->
+
+<section
+    id="calculator"
+    class="calculator-section"
+>
+
+    <div class="calculator-box">
+
+        <div class="label">
+            SCIENCE CALCULATOR · PHYSICS
+        </div>
+
+        <h2>
+            시간 지연 계산기
+        </h2>
+
+        <p>
+            특수상대성이론의 시간 지연 공식을 이용하여
+            빠르게 이동하는 물체의 시간과
+            지구에서 측정되는 시간을 비교합니다.
+        </p>
+
+
+        <!-- 입력 영역 -->
+
+        <div class="calculator-form">
+
+            <div class="input-group">
+
+                <label for="speed">
+                    빛의 속도 대비 속도
+                </label>
+
+                <div class="input-with-unit">
+
+                    <input
+                        type="number"
+                        id="speed"
+                        min="0"
+                        max="99.999999"
+                        step="0.1"
+                        placeholder="예: 90"
+                    >
+
+                    <span>% c</span>
+
+                </div>
+
+            </div>
+
+
+           <div class="input-group">
+
+    <label for="properTime">
+        우주선에서 흐른 시간
+    </label>
+
+    <div class="input-with-unit">
+
+        <input
+            type="number"
+            id="properTime"
+            min="0"
+            step="0.01"
+            placeholder="예: 1"
+        >
+
+        <select id="timeUnit">
+
+            <option value="year">
+                년
+            </option>
+
+            <option value="month">
+                개월
+            </option>
+
+            <option value="day">
+                일
+            </option>
+
+        </select>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="calculateTime"
+                class="calculator-button"
+            >
+                시간 지연 계산하기
+            </button>
+
+        </div>
+
+
+        <!-- 오류 메시지 -->
+
+        <p
+            id="calculatorError"
+            class="calculator-error"
+            aria-live="polite"
+        ></p>
+
+
+        <!-- 계산 결과 -->
+
+        <div
+            id="calculatorResult"
+            class="calculator-result"
+            hidden
+        >
+
+            <div class="result-header">
+                CALCULATION RESULT
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="result-item">
+
+                    <span>
+                        로렌츠 인자 γ
+                    </span>
+
+                    <strong id="gammaResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>
+                        우주선 기준 시간
+                    </span>
+
+                    <strong id="properTimeResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>
+                        지구 기준 시간
+                    </span>
+
+                    <strong id="earthTimeResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>
+                        시간 차이
+                    </span>
+
+                    <strong id="timeDifferenceResult">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="formula-box">
+
+                <div>
+                    사용한 공식
+                </div>
+
+                <strong>
+                    Δt = γΔτ
+                </strong>
+
+                <small>
+                    γ = 1 / √(1 − v²/c²)
+                </small>
+
+            </div>
+
+
+            <p class="result-note">
+                이 계산은 특수상대성이론의 시간 지연 공식을
+                이용한 학습용 계산입니다.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             PAPER
+        ========================== -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                RESEARCH
+            </h2>
+
+            <p class="section-description">
+                이 앱은 10번 과제의 연구 내용을 바탕으로 제작되었습니다.
+            </p>
+
+
+            <div class="paper-box">
+
+                <div class="paper-label">
+                    PAPER · 10
+                </div>
+
+                <h3>
+                    천문학과 물리학 이론을 통한
+                    우주의 시공간과 천체 현상에 관한 연구
+                </h3>
+
+                <p>
+                    특수상대성이론과 일반상대성이론,
+                    시공간, 중성자별과 펄서 등
+                    천문학과 물리학의 여러 개념을
+                    탐구한 연구입니다.
+                </p>
+
+                <a
+                    href="paper10.html"
+                    class="paper-link"
+                >
+                    논문 자세히 보기 →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        SCIENCE STUDY · APPLICATION 13
+
+    </footer>
+
+<script>
+
+    const speedInput =
+        document.getElementById("speed");
+
+    const properTimeInput =
+        document.getElementById("properTime");
+
+    const timeUnit =
+        document.getElementById("timeUnit");
+
+    const calculateButton =
+        document.getElementById("calculateTime");
+
+    const errorMessage =
+        document.getElementById("calculatorError");
+
+    const resultBox =
+        document.getElementById("calculatorResult");
+
+    const gammaResult =
+        document.getElementById("gammaResult");
+
+    const properTimeResult =
+        document.getElementById("properTimeResult");
+
+    const earthTimeResult =
+        document.getElementById("earthTimeResult");
+
+    const timeDifferenceResult =
+        document.getElementById("timeDifferenceResult");
+
+
+    calculateButton.addEventListener(
+        "click",
+        () => {
+
+            errorMessage.textContent = "";
+            resultBox.hidden = true;
+
+
+            const speedPercent =
+                Number(speedInput.value);
+
+            const properTime =
+                Number(properTimeInput.value);
+
+
+            /* 입력값 확인 */
+
+            if (
+                !Number.isFinite(speedPercent) ||
+                speedPercent < 0 ||
+                speedPercent >= 100
+            ) {
+
+                errorMessage.textContent =
+                    "속도는 0 이상 100% 미만으로 입력하세요.";
+
+                return;
+            }
+
+
+            if (
+                !Number.isFinite(properTime) ||
+                properTime <= 0
+            ) {
+
+                errorMessage.textContent =
+                    "우주선에서 흐른 시간은 0보다 큰 값을 입력하세요.";
+
+                return;
+            }
+
+
+            /* =========================
+               특수상대성이론 계산
+
+               β = v / c
+               γ = 1 / √(1 - β²)
+               Δt = γΔτ
+            ========================== */
+
+            const beta =
+                speedPercent / 100;
+
+            const gamma =
+                1 / Math.sqrt(
+                    1 - Math.pow(beta, 2)
+                );
+
+            const earthTime =
+                gamma * properTime;
+
+            const timeDifference =
+                earthTime - properTime;
+
+
+            /* 선택한 시간 단위 */
+
+            let unitLabel = "년";
+
+            if (timeUnit.value === "month") {
+                unitLabel = "개월";
+            }
+
+            if (timeUnit.value === "day") {
+                unitLabel = "일";
+            }
+
+
+            /* 결과 표시 */
+
+            gammaResult.textContent =
+                gamma.toFixed(3);
+
+            properTimeResult.textContent =
+                `${properTime.toFixed(3)} ${unitLabel}`;
+
+            earthTimeResult.textContent =
+                `${earthTime.toFixed(3)} ${unitLabel}`;
+
+            timeDifferenceResult.textContent =
+                `${timeDifference.toFixed(3)} ${unitLabel}`;
+
+
+            resultBox.hidden = false;
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

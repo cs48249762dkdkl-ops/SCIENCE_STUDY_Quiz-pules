@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SCIENCE STUDY | 과학 퀴즈</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f5f2;color:#111;font-family:Arial,"Noto Sans KR",sans-serif}a{color:inherit;text-decoration:none}header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 7%;background:rgba(245,245,242,.95);border-bottom:1px solid #ddd}.logo{font-size:22px;font-weight:800;letter-spacing:1px}.logo span{display:block;margin-top:4px;color:#666;font-size:10px;font-weight:500;letter-spacing:2px}.back{font-size:13px;font-weight:600}.back:hover{text-decoration:underline}main{width:min(920px,88%);margin:auto}.hero{padding:88px 0 70px;border-bottom:1px solid #ddd}.eyebrow{margin-bottom:20px;color:#666;font-size:12px;font-weight:700;letter-spacing:3px}h1{margin:0;font-size:clamp(52px,9vw,100px);line-height:.92;letter-spacing:-5px}.intro{max-width:650px;margin:32px 0 0;color:#555;font-size:17px;line-height:1.8}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.meta span{padding:9px 12px;background:#fff;border:1px solid #ccc;font-size:12px;font-weight:700;letter-spacing:.5px}.form{padding:70px 0 90px}.subject{margin-bottom:58px}.subject-title{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin:0 0 18px;padding-bottom:14px;border-bottom:2px solid #111}.subject-title h2{margin:0;font-size:clamp(27px,4vw,38px);letter-spacing:-1.5px}.subject-title span{color:#777;font-size:12px;font-weight:700;letter-spacing:1px;white-space:nowrap}.card{margin-top:16px;padding:27px;background:#fff;border:1px solid #ddd}.card.correct{border:2px solid #23764a}.card.incorrect{border:2px solid #b23a32}fieldset{min-width:0;margin:0;padding:0;border:0}legend{width:100%;margin-bottom:18px;font-size:18px;font-weight:700;line-height:1.55}.num{display:block;margin-bottom:8px;color:#777;font-size:11px;letter-spacing:1.5px}.choices{display:grid;gap:9px}.choice{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border:1px solid #ddd;cursor:pointer;line-height:1.5}.choice:hover{background:#f5f5f2;border-color:#888}.choice input{width:17px;height:17px;margin:2px 0 0;accent-color:#111}.letter{font-weight:800}.choice.answer{background:#edf7f0;border-color:#23764a}.choice.wrong{background:#fff1f0;border-color:#b23a32}.explain{display:none;margin:20px 0 0;padding:16px;border-left:3px solid #111;background:#f5f5f2;color:#444;font-size:14px;line-height:1.75}.explain.show{display:block}.actions{padding:34px;background:#111;color:#fff}.actions h2{margin:0 0 12px;font-size:30px;letter-spacing:-1px}.actions p{margin:0 0 22px;color:#bbb;line-height:1.7}button{padding:14px 22px;border:1px solid #fff;background:#fff;color:#111;font:700 14px Arial,"Noto Sans KR",sans-serif;cursor:pointer}button:hover{background:#ddd}button:focus-visible,.choice:focus-within{outline:3px solid #5078b8;outline-offset:3px}#message{min-height:1.6em;margin:15px 0 0;color:#ffcc70;font-size:14px}.result{display:none;margin-top:22px;padding:30px;background:#fff;border:1px solid #111}.result.show{display:block}.result-label{margin-bottom:8px;color:#666;font-size:12px;font-weight:700;letter-spacing:2px}.score{margin:0;font-size:clamp(44px,8vw,72px);letter-spacing:-4px}.result p{margin:14px 0 25px;color:#555;line-height:1.7}.breakdown{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:26px}.breakdown div{padding:13px;background:#f5f5f2;border:1px solid #ddd}.breakdown span{display:block;margin-bottom:7px;color:#777;font-size:11px;font-weight:700}.breakdown strong{font-size:17px}#retry{background:#111;color:#fff;border-color:#111}#retry:hover{background:#444}footer{padding:35px 7%;border-top:1px solid #ddd;color:#777;font-size:12px}@media(max-width:700px){header{padding:18px 5%}main{width:90%}h1{letter-spacing:-3px}.hero{padding:70px 0 55px}.form{padding-top:50px}.card,.actions,.result{padding:22px}.breakdown{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="app.html" aria-label="SCIENCE STUDY 홈으로 이동">SCIENCE STUDY<span>SCIENCE LEARNING APP</span></a><a class="back" href="app.html">← APP HOME</a></header>
+<main>
+<section class="hero" aria-labelledby="title"><div class="eyebrow">SCIENCE QUIZ · APPLICATION 13</div><h1 id="title">CHECK<br><strong>YOUR SCIENCE.</strong></h1><p class="intro">천문학, 물리학, 생물학, 화학, 지질학의 핵심 개념을 확인해 보세요. 모든 문제를 고른 뒤 채점하면 분야별 결과와 문제별 해설을 확인할 수 있습니다.</p><div class="meta" aria-label="퀴즈 안내"><span>5 SUBJECTS</span><span>25 QUESTIONS</span><span>4 CHOICES EACH</span></div></section>
+<form id="form" class="form" novalidate><div id="questions"></div><section class="actions" aria-labelledby="submit-title"><h2 id="submit-title">준비가 되었나요?</h2><p>선택한 답안을 바탕으로 바로 채점합니다. 채점 후에는 모든 문제의 해설을 볼 수 있습니다.</p><button type="submit">퀴즈 채점하기 →</button><p id="message" aria-live="polite"></p></section><section id="result" class="result" aria-live="polite" aria-labelledby="score"><div class="result-label">QUIZ RESULT</div><h2 id="score" class="score">0 / 25</h2><p id="resultMessage"></p><div id="breakdown" class="breakdown" aria-label="분야별 점수"></div><button type="button" id="retry">다시 풀기</button></section></form>
+</main><footer>SCIENCE STUDY · SCIENCE QUIZ · APPLICATION 13</footer>
+<script>
+const quiz=[
+["천문학","ASTRONOMY",[
+["태양계에서 태양과 가장 가까운 행성은 무엇인가요?",["금성","수성","지구","화성"],1,"수성은 태양에 가장 가까운 행성입니다. 금성은 그 다음 궤도를 돕니다."],
+["달이 스스로 빛을 내는 것처럼 보이는 이유는 무엇인가요?",["태양빛을 반사하기 때문에","별빛을 모으기 때문에","달 내부에서 빛을 만들기 때문에","지구의 빛을 흡수하기 때문에"],0,"달은 자체적으로 빛을 내지 않습니다. 태양에서 온 빛을 반사하여 밝게 보입니다."],
+["별의 밝기와 표면 온도 등을 나타내는 대표적인 그래프는 무엇인가요?",["헤르츠스프룽-러셀도","주기율표","풍력도","지질도"],0,"헤르츠스프룽-러셀도(H-R도)는 별의 광도와 표면 온도 또는 분광형의 관계를 보여 줍니다."],
+["지구가 태양 주위를 한 바퀴 도는 데 걸리는 시간은 약 얼마인가요?",["24시간","30일","365일","10년"],2,"지구의 공전 주기는 약 365.25일이며, 이것이 1년의 기준이 됩니다."],
+["은하를 이루는 수많은 별과 성간 물질이 중력으로 묶여 있는 구조는 무엇인가요?",["성운","은하","행성","소행성"],1,"은하는 별, 가스, 먼지, 암흑물질 등이 중력으로 모인 거대한 천체계입니다."]]],
+["물리학","PHYSICS",[
+["힘의 SI 단위는 무엇인가요?",["줄(J)","와트(W)","뉴턴(N)","파스칼(Pa)"],2,"힘의 SI 단위는 뉴턴(N)입니다. 1 N은 1 kg의 물체에 1 m/s²의 가속도를 주는 힘입니다."],
+["진공에서 빛의 속도는 약 얼마인가요?",["초속 3,000 m","초속 30,000 km","초속 300,000 km","초속 3,000,000 km"],2,"진공에서 빛은 약 초속 300,000 km(3.0×10⁸ m)로 이동합니다."],
+["물체에 작용하는 알짜힘이 0일 때, 정지한 물체의 운동 상태는 어떻게 되나요?",["즉시 가속한다","계속 정지한다","반드시 회전한다","질량이 사라진다"],1,"뉴턴의 제1법칙에 따라 알짜힘이 0이면 정지한 물체는 계속 정지해 있습니다."],
+["전류의 단위는 무엇인가요?",["암페어(A)","볼트(V)","옴(Ω)","쿨롱(C)"],0,"전류의 SI 단위는 암페어(A)입니다. 볼트는 전압, 옴은 전기저항의 단위입니다."],
+["소리가 공기 중에서 전달되기 위해 필요한 것은 무엇인가요?",["진공","매질","자기장","빛"],1,"소리는 물질의 진동이 전달되는 파동이므로 공기·물·고체 같은 매질이 필요합니다."]]],
+["생물학","BIOLOGY",[
+["광합성이 주로 일어나는 식물 세포의 소기관은 무엇인가요?",["미토콘드리아","엽록체","핵","리보솜"],1,"엽록체의 엽록소가 빛에너지를 흡수하여 광합성을 진행합니다."],
+["유전 정보를 담고 있는 DNA의 기본 단위는 무엇인가요?",["아미노산","지방산","뉴클레오타이드","포도당"],2,"DNA는 당, 인산, 염기로 이루어진 뉴클레오타이드가 길게 연결된 분자입니다."],
+["사람의 혈액에서 산소를 운반하는 세포는 무엇인가요?",["백혈구","혈소판","적혈구","신경세포"],2,"적혈구 속 헤모글로빈은 산소와 결합해 온몸으로 운반합니다."],
+["생태계에서 생산자에 해당하는 생물은 무엇인가요?",["버섯","토끼","녹색식물","매"],2,"녹색식물은 광합성으로 유기물을 만들어 내므로 생산자입니다."],
+["세포 호흡을 통해 ATP를 많이 만드는 소기관은 무엇인가요?",["미토콘드리아","엽록체","골지체","세포막"],0,"미토콘드리아는 세포 호흡을 통해 세포가 쓰는 에너지인 ATP를 생산합니다."]]],
+["화학","CHEMISTRY",[
+["물(H₂O)은 어떤 종류의 물질인가요?",["원소","화합물","혼합물","금속"],1,"물은 수소와 산소가 일정한 비율로 화학 결합한 화합물입니다."],
+["pH가 7인 수용액의 성질은 무엇인가요?",["산성","염기성","중성","항상 유독함"],2,"25℃에서 pH 7은 중성을 뜻합니다. 7보다 작으면 산성, 크면 염기성입니다."],
+["원자핵을 이루는 입자는 무엇인가요?",["양성자와 중성자","전자와 양성자","전자와 중성자","전자만"],0,"원자핵에는 양성자와 중성자가 있으며, 전자는 원자핵 주변에 존재합니다."],
+["연소가 일어나기 위해 필요한 세 가지 조건이 아닌 것은 무엇인가요?",["탈 물질","산소","발화점 이상의 열","질소"],3,"연소의 3요소는 탈 물질, 산소, 발화점 이상의 열입니다. 질소는 일반적으로 연소를 돕지 않습니다."],
+["용액에서 녹아 있는 물질을 무엇이라고 하나요?",["용매","용질","침전","촉매"],1,"용질은 용매에 녹는 물질이고, 용매는 용질을 녹이는 물질입니다."]]],
+["지질학","GEOLOGY",[
+["지구 내부에서 가장 바깥쪽의 단단한 층은 무엇인가요?",["내핵","외핵","맨틀","지각"],3,"지각은 지구의 가장 바깥쪽 고체층이며, 우리가 살고 있는 대륙과 해저를 포함합니다."],
+["화산에서 지표 밖으로 나온 마그마를 무엇이라고 하나요?",["용암","퇴적물","풍화물","광물"],0,"지하의 마그마가 지표로 분출되면 용암이라고 부릅니다."],
+["암석이 풍화·침식되어 생긴 물질이 쌓여 만들어지는 암석은 무엇인가요?",["화성암","변성암","퇴적암","현무암"],2,"퇴적물의 압축과 교결로 만들어지는 암석이 퇴적암입니다."],
+["지진의 규모를 나타내는 수치가 커질수록 일반적으로 무엇이 커지나요?",["방출된 에너지","지구의 질량","하루의 길이","대기압"],0,"지진 규모는 지진으로 방출된 에너지의 크기를 나타내며, 규모가 1 커지면 에너지는 크게 증가합니다."],
+["판의 경계에서 두 판이 서로 멀어지는 경계를 무엇이라고 하나요?",["수렴형 경계","발산형 경계","보존형 경계","습곡"],1,"발산형 경계에서는 두 판이 멀어지며 새로운 지각이 만들어질 수 있습니다."]]]
+];
+const form=document.getElementById("form"),area=document.getElementById("questions"),message=document.getElementById("message"),result=document.getElementById("result"),score=document.getElementById("score"),resultMessage=document.getElementById("resultMessage"),breakdown=document.getElementById("breakdown");
+let graded=false;
+function render(){
+  let number=0;
+  area.innerHTML=quiz.map((subject,si)=>`<section class="subject" aria-labelledby="subject-${si}"><div class="subject-title"><h2 id="subject-${si}">${subject[0]}</h2><span>${subject[1]} · 5 QUESTIONS</span></div>${subject[2].map((item,qi)=>`<article class="card" data-s="${si}" data-q="${qi}"><fieldset><legend><span class="num">QUESTION ${String(++number).padStart(2,"0")}</span>${item[0]}</legend><div class="choices">${item[1].map((option,oi)=>`<label class="choice"><input type="radio" name="q-${si}-${qi}" value="${oi}"><span class="letter">${String.fromCharCode(65+oi)}.</span><span>${option}</span></label>`).join("")}</div></fieldset><p class="explain"><strong>해설.</strong> ${item[3]}</p></article>`).join("")}</section>`).join("");
+}
+function pick(si,qi){const selected=document.querySelector(`input[name="q-${si}-${qi}"]:checked`);return selected?Number(selected.value):null}
+function showResult(total,parts){
+  const percent=Math.round(total/25*100);
+  const feedback=percent>=90?"훌륭합니다! 과학의 핵심 개념을 아주 탄탄하게 이해하고 있어요.":percent>=70?"좋아요! 해설을 통해 틀린 개념만 정리하면 더 완벽해집니다.":percent>=50?"기초가 잘 잡혀 있어요. 해설을 읽고 부족한 분야를 복습해 보세요.":"개념을 더 확인해 보세요. 해설을 읽고 다시 도전해 보세요.";
+  score.textContent=`${total} / 25`;
+  resultMessage.textContent=`${percent}점 · ${feedback}`;
+  breakdown.innerHTML=quiz.map((subject,si)=>`<div><span>${subject[0]}</span><strong>${parts[si]} / 5</strong></div>`).join("");
+  result.classList.add("show");
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+}
+form.addEventListener("submit",event=>{
+  event.preventDefault();
+  if(graded)return;
+  let firstBlank=null;
+  quiz.forEach((subject,si)=>subject[2].forEach((item,qi)=>{
+    if(pick(si,qi)===null&&!firstBlank)firstBlank=document.querySelector(`[data-s="${si}"][data-q="${qi}"]`);
+  }));
+  if(firstBlank){
+    message.textContent="모든 문제의 답을 선택한 뒤 채점해 주세요.";
+    firstBlank.scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+  message.textContent="";
+  let total=0;
+  const parts=quiz.map(()=>0);
+  quiz.forEach((subject,si)=>subject[2].forEach((item,qi)=>{
+    const selected=pick(si,qi);
+    const card=document.querySelector(`[data-s="${si}"][data-q="${qi}"]`);
+    const choices=card.querySelectorAll(".choice");
+    choices[item[2]].classList.add("answer");
+    if(selected===item[2]){total+=1;parts[si]+=1;card.classList.add("correct");}
+    else{choices[selected].classList.add("wrong");card.classList.add("incorrect");}
+    card.querySelector(".explain").classList.add("show");
+    card.querySelectorAll("input").forEach(input=>input.disabled=true);
+  }));
+  graded=true;
+  showResult(total,parts);
+});
+document.getElementById("retry").addEventListener("click",()=>{
+  form.reset();
+  graded=false;
+  message.textContent="";
+  result.classList.remove("show");
+  document.querySelectorAll(".card").forEach(card=>{
+    card.classList.remove("correct","incorrect");
+    card.querySelector(".explain").classList.remove("show");
+    card.querySelectorAll(".choice").forEach(choice=>choice.classList.remove("answer","wrong"));
+    card.querySelectorAll("input").forEach(input=>input.disabled=false);
+  });
+  form.scrollIntoView({behavior:"smooth",block:"start"});
+});
+render();
+</script>
+</body>
+</html>

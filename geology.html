@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCIENCE STUDY | GEOLOGY</title>
+<style>
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;background:#f5f5f2;color:#111}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 7%;background:rgba(245,245,242,.96);border-bottom:1px solid #ddd}
+.logo{font-size:22px;font-weight:800;letter-spacing:1px} .logo span{display:block;margin-top:4px;font-size:10px;font-weight:500;letter-spacing:2px;color:#666}
+.back{font-size:13px;font-weight:700} .back:hover{text-decoration:underline}
+main{width:min(1180px,90%);margin:auto}
+.hero{min-height:480px;display:flex;flex-direction:column;justify-content:center;padding:80px 0}
+.label{font-size:12px;font-weight:700;letter-spacing:3px;color:#666;margin-bottom:20px}
+.hero h1{margin:0;font-size:clamp(58px,10vw,115px);line-height:.9;letter-spacing:-6px}
+.hero p{max-width:720px;margin-top:35px;font-size:18px;line-height:1.8;color:#555}
+.section{padding:90px 0;border-top:1px solid #ddd}
+.section h2{margin:0 0 14px;font-size:40px;letter-spacing:-2px}
+.desc{max-width:760px;margin:0 0 35px;color:#666;line-height:1.8}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:#111;color:#fff;padding:28px} .stat b{display:block;font-size:34px} .stat span{color:#aaa;font-size:12px}
+.controls{display:flex;gap:12px;margin:30px 0 20px}
+.controls input,.controls select{padding:15px;border:1px solid #ccc;background:#fff;font-size:14px;outline:none}
+.controls input{flex:1} .controls input:focus,.controls select:focus{border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.card{min-height:145px;padding:18px;background:#fff;border:1px solid #ddd;cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#111;box-shadow:0 10px 24px #00000012}
+.num{font-size:10px;color:#888;letter-spacing:2px} .sym{margin-top:8px;font-size:30px;font-weight:800}
+.name{margin-top:5px;font-size:14px} .meta{margin-top:12px;color:#777;font-size:11px;line-height:1.5}
+.empty{padding:30px;text-align:center;background:#fff;border:1px solid #ddd;color:#777}
+.detail{display:none;margin-top:25px;padding:32px;background:#111;color:#fff} .detail.show{display:block}
+.detailhead{display:flex;justify-content:space-between;gap:20px} .dnum{color:#aaa;font-size:11px;letter-spacing:2px}
+.dsym{font-size:58px;font-weight:800;margin-top:6px} .detail h3{font-size:30px;margin:4px 0}
+.close{height:max-content;padding:10px 15px;background:transparent;color:#fff;border:1px solid #555;cursor:pointer}
+.dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:25px}
+.ditem{padding:18px;background:#1d1d1d;border:1px solid #333} .ditem span{display:block;color:#888;font-size:11px;margin-bottom:8px} .ditem strong{font-size:14px;line-height:1.7}
+.oregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.ore{padding:28px;background:#fff;border:1px solid #ddd} .ore .num{letter-spacing:2px} .ore h3{margin:12px 0 7px;font-size:25px} .ore p{font-size:14px;line-height:1.7;color:#555}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px} .process article{padding:25px;background:#fff;border:1px solid #ddd}
+.process b{display:block;font-size:24px;margin-bottom:12px} .process p{margin:0;color:#666;line-height:1.7;font-size:14px}
+.note{margin-top:25px;padding:20px;background:#e9e9e5;color:#666;line-height:1.7;font-size:13px}
+footer{padding:35px 7%;border-top:1px solid #ddd;color:#777;font-size:12px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(4,1fr)}.oregrid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){header{padding:18px 5%}main{width:90%}.hero h1{font-size:58px;letter-spacing:-3px}.controls{flex-direction:column}.grid{grid-template-columns:repeat(2,1fr)}.oregrid,.process,.dgrid{grid-template-columns:1fr}.detailhead{flex-direction:column}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="app.html" class="logo">SCIENCE STUDY<span>SCIENCE LEARNING APP</span></a>
+<a href="app.html" class="back">← SCIENCE STUDY</a>
+</header>
+
+<main>
+<section class="hero">
+<div class="label">APPLICATION · 13 · GEOLOGY</div>
+<h1>GEO<br><strong>LOGY</strong></h1>
+<p>지구를 구성하는 원소와 광물, 광석의 성질을 탐구하고 원소의 산출 형태와 지질학적 환경을 검색하는 학습 공간입니다.</p>
+</section>
+
+<section class="section">
+<div class="label">GEOLOGY · DATABASE</div>
+<h2>지질학 데이터베이스</h2>
+<p class="desc">원소 → 광물 → 광석 → 지질학적 환경의 관계를 단계적으로 탐구합니다.</p>
+<div class="stats">
+<div class="stat"><b>118</b><span>원소 데이터</span></div>
+<div class="stat"><b>6</b><span>대표 광석</span></div>
+<div class="stat"><b>4</b><span>광상 형성 과정</span></div>
+<div class="stat"><b>∞</b><span>확장 가능한 구조</span></div>
+</div>
+</section>
+
+<section class="section" id="elements">
+<div class="label">ELEMENT DATABASE · 118</div>
+<h2>118개 원소 분포표</h2>
+<p class="desc">원소 이름 또는 기호로 검색하고 분류별로 필터링하세요. 원소 카드를 누르면 지질학적 상세 정보가 표시됩니다.</p>
+<div class="controls">
+<input id="search" type="search" placeholder="원소 이름 또는 기호 검색">
+<select id="category">
+<option value="all">전체 원소</option>
+<option value="금속">금속</option>
+<option value="비금속">비금속</option>
+<option value="준금속">준금속</option>
+<option value="비활성 기체">비활성 기체</option>
+<option value="란타넘족">란타넘족</option>
+<option value="방사성">방사성 원소</option>
+</select>
+</div>
+<div id="grid" class="grid"></div>
+<div id="empty" class="empty" hidden>검색 결과가 없습니다.</div>
+
+<div id="detail" class="detail">
+<div class="detailhead">
+<div><div id="dnum" class="dnum"></div><div id="dsym" class="dsym"></div><h3 id="dname"></h3></div>
+<button id="close" class="close">닫기</button>
+</div>
+<div class="dgrid">
+<div class="ditem"><span>분류</span><strong id="dcat"></strong></div>
+<div class="ditem"><span>물질 상태</span><strong id="dstate"></strong></div>
+<div class="ditem"><span>대표 광물·산출 형태</span><strong id="dmineral"></strong></div>
+<div class="ditem"><span>지질학적 환경</span><strong id="denv"></strong></div>
+<div class="ditem"><span>주요 활용</span><strong id="duse"></strong></div>
+<div class="ditem"><span>지질학적 의미</span><strong id="dmeaning"></strong></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="ores">
+<div class="label">GEOLOGY · ORES</div>
+<h2>주요 광석</h2>
+<p class="desc">경제적으로 중요한 대표 광석을 통해 원소가 자연계에서 농집되는 방식을 살펴봅니다.</p>
+<div class="oregrid">
+<article class="ore"><div class="num">ORE · 01</div><h3>철광석</h3><p><b>Fe · 적철석 · 자철석</b></p><p>퇴적·화성·열수 환경에서 형성되며 철강 생산의 주요 원료입니다.</p></article>
+<article class="ore"><div class="num">ORE · 02</div><h3>동광석</h3><p><b>Cu · 황동석</b></p><p>열수 및 반암형 광상에서 중요하며 전선과 합금 등에 사용됩니다.</p></article>
+<article class="ore"><div class="num">ORE · 03</div><h3>알루미늄 광석</h3><p><b>Al · 보크사이트</b></p><p>강한 풍화 환경에서 형성되는 대표적인 알루미늄 원료입니다.</p></article>
+<article class="ore"><div class="num">ORE · 04</div><h3>납 광석</h3><p><b>Pb · 방연석</b></p><p>열수·다금속 광상에서 산출되며 납 생산의 주요 광석입니다.</p></article>
+<article class="ore"><div class="num">ORE · 05</div><h3>아연 광석</h3><p><b>Zn · 섬아연석</b></p><p>열수 및 퇴적성 광상에서 산출되며 도금과 합금에 사용됩니다.</p></article>
+<article class="ore"><div class="num">ORE · 06</div><h3>우라늄 광석</h3><p><b>U · 우라니나이트</b></p><p>여러 유형의 우라늄 광상에서 산출되며 원자력 연료의 원료가 됩니다.</p></article>
+</div>
+</section>
+
+<section class="section">
+<div class="label">GEOLOGY · FORMATION</div>
+<h2>광상 형성 과정</h2>
+<p class="desc">원소가 지각에서 이동하고 농집되어 광상을 만드는 대표적인 지질학적 과정을 살펴봅니다.</p>
+<div class="process">
+<article><b>01 · 마그마</b><p>마그마의 냉각과 분화 과정에서 특정 원소와 광물이 농집될 수 있습니다.</p></article>
+<article><b>02 · 열수</b><p>뜨거운 유체가 암석을 통과하며 원소를 이동시키고 침전시킵니다.</p></article>
+<article><b>03 · 풍화</b><p>지표 풍화 과정에서 일부 원소가 용출되거나 잔류하여 농집될 수 있습니다.</p></article>
+<article><b>04 · 퇴적</b><p>물질이 이동하고 퇴적되면서 화학적·물리적 과정으로 광상이 형성될 수 있습니다.</p></article>
+</div>
+<div class="note">주의: 118개 원소가 모두 경제적 광석을 갖는 것은 아닙니다. 일부 방사성·초중원소는 자연계에 극미량 존재하거나 주로 인공적으로 생성됩니다.</div>
+</section>
+</main>
+
+<footer>SCIENCE STUDY · APPLICATION 13 · GEOLOGY</footer>
+
+<script>
+const elements = [
+{n:1,s:"H",name:"수소",cat:"비금속",state:"기체",mineral:"물·탄화수소",env:"물·유기물",use:"연료·화학"},
+{n:2,s:"He",name:"헬륨",cat:"비활성 기체",state:"기체",mineral:"천연가스 중 기체",env:"천연가스·방사성 붕괴",use:"극저온·연구"},
+{n:3,s:"Li",name:"리튬",cat:"금속",state:"고체",mineral:"스포듀민·레피돌라이트",env:"페그마타이트·염수",use:"배터리"},
+{n:4,s:"Be",name:"베릴륨",cat:"금속",state:"고체",mineral:"베릴",env:"화강암질 페그마타이트",use:"특수 합금"},
+{n:5,s:"B",name:"붕소",cat:"준금속",state:"고체",mineral:"붕사·콜레마나이트",env:"증발암·화산성 환경",use:"유리·세라믹"},
+{n:6,s:"C",name:"탄소",cat:"비금속",state:"고체",mineral:"흑연·다이아몬드",env:"퇴적·변성·화성 환경",use:"철강·전자·보석"},
+{n:7,s:"N",name:"질소",cat:"비금속",state:"기체",mineral:"질산염",env:"대기·토양·생물권",use:"비료"},
+{n:8,s:"O",name:"산소",cat:"비금속",state:"기체",mineral:"산화물·규산염",env:"지각 전반",use:"산업·생명"},
+{n:9,s:"F",name:"플루오린",cat:"비금속",state:"기체",mineral:"형석",env:"열수 광상",use:"화학산업"},
+{n:10,s:"Ne",name:"네온",cat:"비활성 기체",state:"기체",mineral:"대기 중 기체",env:"대기",use:"조명"},
+{n:11,s:"Na",name:"나트륨",cat:"금속",state:"고체",mineral:"암염·장석",env:"증발암·화성암",use:"화학산업"},
+{n:12,s:"Mg",name:"마그네슘",cat:"금속",state:"고체",mineral:"마그네사이트·백운석",env:"퇴적암·초고철질암",use:"합금"},
+{n:13,s:"Al",name:"알루미늄",cat:"금속",state:"고체",mineral:"보크사이트",env:"강한 풍화 환경",use:"금속 생산"},
+{n:14,s:"Si",name:"규소",cat:"준금속",state:"고체",mineral:"석영·규산염",env:"지각 전반",use:"반도체·유리"},
+{n:15,s:"P",name:"인",cat:"비금속",state:"고체",mineral:"인회석",env:"화성암·퇴적암",use:"비료"},
+{n:16,s:"S",name:"황",cat:"비금속",state:"고체",mineral:"황·황철석·석고",env:"화산·열수·퇴적 환경",use:"화학산업"},
+{n:17,s:"Cl",name:"염소",cat:"비금속",state:"기체",mineral:"암염 등 염화물",env:"증발암·염수",use:"화학산업"},
+{n:18,s:"Ar",name:"아르곤",cat:"비활성 기체",state:"기체",mineral:"대기 중 기체",env:"대기",use:"용접·연구"},
+{n:19,s:"K",name:"칼륨",cat:"금속",state:"고체",mineral:"칼륨장석·운모",env:"화성암·퇴적암",use:"비료"},
+{n:20,s:"Ca",name:"칼슘",cat:"금속",state:"고체",mineral:"방해석·석고",env:"퇴적암·화성암",use:"시멘트·건축"},
+{n:21,s:"Sc",name:"스칸듐",cat:"금속",state:"고체",mineral:"광물에 미량 분산",env:"화성암 등",use:"특수 합금"},
+{n:22,s:"Ti",name:"티타늄",cat:"금속",state:"고체",mineral:"티타늄철석·금홍석",env:"화성암·사광상",use:"합금·안료"},
+{n:23,s:"V",name:"바나듐",cat:"금속",state:"고체",mineral:"바나디나이트",env:"철·티타늄 광상",use:"합금"},
+{n:24,s:"Cr",name:"크로뮴",cat:"금속",state:"고체",mineral:"크로마이트",env:"초고철질 암석",use:"합금"},
+{n:25,s:"Mn",name:"망가니즈",cat:"금속",state:"고체",mineral:"연망가니즈석",env:"퇴적·열수 환경",use:"철강"},
+{n:26,s:"Fe",name:"철",cat:"금속",state:"고체",mineral:"적철석·자철석",env:"퇴적·화성·열수 환경",use:"철강"},
+{n:27,s:"Co",name:"코발트",cat:"금속",state:"고체",mineral:"코발타이트",env:"열수·황화물 광상",use:"배터리·합금"},
+{n:28,s:"Ni",name:"니켈",cat:"금속",state:"고체",mineral:"펜틀란다이트·갈철석",env:"초고철질암·풍화 지각",use:"합금·배터리"},
+{n:29,s:"Cu",name:"구리",cat:"금속",state:"고체",mineral:"황동석·휘동석",env:"열수·반암형 광상",use:"전선·합금"},
+{n:30,s:"Zn",name:"아연",cat:"금속",state:"고체",mineral:"섬아연석",env:"열수·퇴적성 광상",use:"도금·합금"},
+{n:31,s:"Ga",name:"갈륨",cat:"금속",state:"고체",mineral:"보크사이트·섬아연석에 미량",env:"Al·Zn 광상",use:"반도체"},
+{n:32,s:"Ge",name:"저마늄",cat:"준금속",state:"고체",mineral:"황화물에 미량",env:"아연 광상",use:"반도체·광섬유"},
+{n:33,s:"As",name:"비소",cat:"준금속",state:"고체",mineral:"계관석·비소황화물",env:"열수 광상",use:"특수 산업"},
+{n:34,s:"Se",name:"셀레늄",cat:"비금속",state:"고체",mineral:"황화물에 미량",env:"황화물 광상",use:"전자·유리"},
+{n:35,s:"Br",name:"브로민",cat:"비금속",state:"액체",mineral:"브로마이드 염",env:"염수·증발암",use:"화학산업"},
+{n:36,s:"Kr",name:"크립톤",cat:"비활성 기체",state:"기체",mineral:"대기 중 기체",env:"대기",use:"조명"},
+{n:37,s:"Rb",name:"루비듐",cat:"금속",state:"고체",mineral:"장석·운모에 미량",env:"화강암질 암석",use:"연구"},
+{n:38,s:"Sr",name:"스트론튬",cat:"금속",state:"고체",mineral:"스트론티아나이트·천청석",env:"퇴적 환경",use:"세라믹·불꽃"},
+{n:39,s:"Y",name:"이트륨",cat:"금속",state:"고체",mineral:"제노타임 등 희토류 광물",env:"화성암·사광상",use:"세라믹·전자"},
+{n:40,s:"Zr",name:"지르코늄",cat:"금속",state:"고체",mineral:"지르콘",env:"화성암·사광상",use:"세라믹"},
+{n:41,s:"Nb",name:"나이오븀",cat:"금속",state:"고체",mineral:"콜럼바이트",env:"페그마타이트",use:"합금"},
+{n:42,s:"Mo",name:"몰리브데넘",cat:"금속",state:"고체",mineral:"몰리브데나이트",env:"반암형·열수 광상",use:"합금"},
+{n:43,s:"Tc",name:"테크네튬",cat:"방사성",state:"고체",mineral:"자연계 극미량·주로 인공",env:"우라늄 붕괴계열",use:"연구"},
+{n:44,s:"Ru",name:"루테늄",cat:"금속",state:"고체",mineral:"백금족 광물",env:"마그마성 광상",use:"촉매·전자"},
+{n:45,s:"Rh",name:"로듐",cat:"금속",state:"고체",mineral:"백금족 광물",env:"마그마성 광상",use:"촉매"},
+{n:46,s:"Pd",name:"팔라듐",cat:"금속",state:"고체",mineral:"백금족 광물",env:"마그마성 광상",use:"촉매·전자"},
+{n:47,s:"Ag",name:"은",cat:"금속",state:"고체",mineral:"자연은·휘은석",env:"열수 광상",use:"귀금속·전자"},
+{n:48,s:"Cd",name:"카드뮴",cat:"금속",state:"고체",mineral:"섬아연석에 동반",env:"아연 광상",use:"배터리·도금"},
+{n:49,s:"In",name:"인듐",cat:"금속",state:"고체",mineral:"섬아연석에 미량",env:"아연 광상",use:"디스플레이·전자"},
+{n:50,s:"Sn",name:"주석",cat:"금속",state:"고체",mineral:"석석",env:"화강암질 열수·사광상",use:"납땜·합금"},
+{n:51,s:"Sb",name:"안티모니",cat:"준금속",state:"고체",mineral:"휘안석",env:"열수 광상",use:"합금"},
+{n:52,s:"Te",name:"텔루륨",cat:"준금속",state:"고체",mineral:"텔루륨화물·황화물",env:"열수·금속 광상",use:"전자·태양전지"},
+{n:53,s:"I",name:"아이오딘",cat:"비금속",state:"고체",mineral:"요오드화물·염수",env:"염수·해양 환경",use:"의약·화학"},
+{n:54,s:"Xe",name:"제논",cat:"비활성 기체",state:"기체",mineral:"대기 중 기체",env:"대기",use:"조명·의료"},
+{n:55,s:"Cs",name:"세슘",cat:"금속",state:"고체",mineral:"폴루사이트",env:"페그마타이트",use:"정밀 시계"},
+{n:56,s:"Ba",name:"바륨",cat:"금속",state:"고체",mineral:"중정석",env:"열수·퇴적 환경",use:"시추·의료"},
+{n:57,s:"La",name:"란타넘",cat:"란타넘족",state:"고체",mineral:"모나자이트·배스트네사이트",env:"희토류 광상",use:"촉매·광학"},
+{n:58,s:"Ce",name:"세륨",cat:"란타넘족",state:"고체",mineral:"모나자이트·배스트네사이트",env:"희토류 광상",use:"촉매·연마"},
+{n:59,s:"Pr",name:"프라세오디뮴",cat:"란타넘족",state:"고체",mineral:"모나자이트·배스트네사이트",env:"희토류 광상",use:"자석·유리"},
+{n:60,s:"Nd",name:"네오디뮴",cat:"란타넘족",state:"고체",mineral:"모나자이트·배스트네사이트",env:"희토류 광상",use:"강력 자석"},
+{n:61,s:"Pm",name:"프로메튬",cat:"란타넘족",state:"고체",mineral:"자연계 극미량·주로 인공",env:"방사성 붕괴계열",use:"연구"},
+{n:62,s:"Sm",name:"사마륨",cat:"란타넘족",state:"고체",mineral:"모나자이트",env:"희토류 광상",use:"자석·원자로"},
+{n:63,s:"Eu",name:"유로퓸",cat:"란타넘족",state:"고체",mineral:"모나자이트 등",env:"희토류 광상",use:"형광체"},
+{n:64,s:"Gd",name:"가돌리늄",cat:"란타넘족",state:"고체",mineral:"제노타임·모나자이트",env:"희토류 광상",use:"의료·자성"},
+{n:65,s:"Tb",name:"터븀",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"자성재료"},
+{n:66,s:"Dy",name:"디스프로슘",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"고성능 자석"},
+{n:67,s:"Ho",name:"홀뮴",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"레이저"},
+{n:68,s:"Er",name:"어븀",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"광섬유"},
+{n:69,s:"Tm",name:"툴륨",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"레이저"},
+{n:70,s:"Yb",name:"이터븀",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"전자·연구"},
+{n:71,s:"Lu",name:"루테튬",cat:"란타넘족",state:"고체",mineral:"제노타임 등",env:"희토류 광상",use:"의료·촉매"},
+{n:72,s:"Hf",name:"하프늄",cat:"금속",state:"고체",mineral:"지르콘에 동반",env:"화성암·사광상",use:"원자로·합금"},
+{n:73,s:"Ta",name:"탄탈럼",cat:"금속",state:"고체",mineral:"탄탈라이트",env:"페그마타이트",use:"전자부품"},
+{n:74,s:"W",name:"텅스텐",cat:"금속",state:"고체",mineral:"철망간중석·회중석",env:"열수 광상",use:"초경·합금"},
+{n:75,s:"Re",name:"레늄",cat:"금속",state:"고체",mineral:"몰리브데나이트에 미량",env:"몰리브데넘 광상",use:"고온 합금"},
+{n:76,s:"Os",name:"오스뮴",cat:"금속",state:"고체",mineral:"백금족 광물",env:"마그마성 광상",use:"합금·촉매"},
+{n:77,s:"Ir",name:"이리듐",cat:"금속",state:"고체",mineral:"백금족 광물",env:"마그마성 광상",use:"촉매·합금"},
+{n:78,s:"Pt",name:"백금",cat:"금속",state:"고체",mineral:"자연백금·백금족 광물",env:"마그마성 광상",use:"귀금속·촉매"},
+{n:79,s:"Au",name:"금",cat:"금속",state:"고체",mineral:"자연금",env:"열수 광상·사광상",use:"귀금속·전자"},
+{n:80,s:"Hg",name:"수은",cat:"금속",state:"액체",mineral:"진사",env:"열수 광상",use:"산업·연구"},
+{n:81,s:"Tl",name:"탈륨",cat:"금속",state:"고체",mineral:"황화물에 미량",env:"열수 광상",use:"전자·연구"},
+{n:82,s:"Pb",name:"납",cat:"금속",state:"고체",mineral:"방연석",env:"열수·다금속 광상",use:"배터리"},
+{n:83,s:"Bi",name:"비스무트",cat:"금속",state:"고체",mineral:"자연 비스무트·황화물",env:"열수 광상",use:"합금·전자"},
+{n:84,s:"Po",name:"폴로늄",cat:"방사성",state:"고체",mineral:"자연계 극미량",env:"우라늄 붕괴계열",use:"연구"},
+{n:85,s:"At",name:"아스타틴",cat:"방사성",state:"고체",mineral:"자연계 극미량",env:"방사성 붕괴계열",use:"연구"},
+{n:86,s:"Rn",name:"라돈",cat:"비활성 기체",state:"기체",mineral:"방사성 기체",env:"우라늄·라듐 붕괴",use:"방사선 연구"},
+{n:87,s:"Fr",name:"프랑슘",cat:"방사성",state:"고체",mineral:"자연계 극미량",env:"악티늄 붕괴계열",use:"연구"},
+{n:88,s:"Ra",name:"라듐",cat:"방사성",state:"고체",mineral:"우라늄 광물에 동반",env:"우라늄 광상",use:"연구"},
+{n:89,s:"Ac",name:"악티늄",cat:"방사성",state:"고체",mineral:"우라늄 붕괴계열",env:"우라늄 광물에 극미량",use:"연구"},
+{n:90,s:"Th",name:"토륨",cat:"방사성",state:"고체",mineral:"토리아나이트·모나자이트",env:"화강암·희토류 광상",use:"원자력 연구"},
+{n:91,s:"Pa",name:"프로트악티늄",cat:"방사성",state:"고체",mineral:"우라늄 붕괴계열에 극미량",env:"우라늄 광물",use:"연구"},
+{n:92,s:"U",name:"우라늄",cat:"방사성",state:"고체",mineral:"우라니나이트·카르노타이트",env:"화강암 관련·사암형 광상",use:"원자력 연료"},
+{n:93,s:"Np",name:"넵투늄",cat:"방사성",state:"고체",mineral:"자연계 극미량·주로 인공",env:"우라늄 광물에서 극미량",use:"연구"},
+{n:94,s:"Pu",name:"플루토늄",cat:"방사성",state:"고체",mineral:"자연계 극미량·주로 인공",env:"우라늄계 환경에서 극미량",use:"원자력 연구"},
+{n:95,s:"Am",name:"아메리슘",cat:"방사성",state:"고체",mineral:"주로 인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:96,s:"Cm",name:"퀴륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:97,s:"Bk",name:"버클륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:98,s:"Cf",name:"캘리포늄",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:99,s:"Es",name:"아인슈타이늄",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:100,s:"Fm",name:"페르뮴",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:101,s:"Md",name:"멘델레븀",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:102,s:"No",name:"노벨륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:103,s:"Lr",name:"로렌슘",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:104,s:"Rf",name:"러더퍼듐",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:105,s:"Db",name:"더브늄",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:106,s:"Sg",name:"시보귬",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:107,s:"Bh",name:"보륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:108,s:"Hs",name:"하슘",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:109,s:"Mt",name:"마이트너륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:110,s:"Ds",name:"다름슈타튬",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:111,s:"Rg",name:"뢴트게늄",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:112,s:"Cn",name:"코페르니슘",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:113,s:"Nh",name:"니호늄",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:114,s:"Fl",name:"플레로븀",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:115,s:"Mc",name:"모스코븀",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:116,s:"Lv",name:"리버모륨",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:117,s:"Ts",name:"테네신",cat:"방사성",state:"고체",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"},
+{n:118,s:"Og",name:"오가네손",cat:"방사성",state:"기체로 예측",mineral:"인공 생성",env:"자연계 주요 광석 없음",use:"연구"}
+];
+
+const search = document.getElementById("search");
+const category = document.getElementById("category");
+const grid = document.getElementById("grid");
+const empty = document.getElementById("empty");
+const detail = document.getElementById("detail");
+
+const labels = {
+"금속":"METAL","비금속":"NONMETAL","준금속":"METALLOID",
+"비활성 기체":"NOBLE GAS","란타넘족":"LANTHANIDE","방사성":"RADIOACTIVE"
+};
+
+function render() {
+const q = search.value.trim().toLowerCase();
+const c = category.value;
+const filtered = elements.filter(e =>
+(e.name.toLowerCase().includes(q) || e.s.toLowerCase().includes(q) || String(e.n).includes(q)) &&
+(c === "all" || e.cat === c)
+);
+grid.innerHTML = "";
+filtered.forEach(e => {
+const card = document.createElement("article");
+card.className = "card";
+card.innerHTML = `<div class="num">${String(e.n).padStart(3,"0")} · ${labels[e.cat] || e.cat.toUpperCase()}</div>
+<div class="sym">${e.s}</div><div class="name">${e.name}</div>
+<div class="meta">${e.mineral}</div>`;
+card.addEventListener("click", () => showDetail(e));
+grid.appendChild(card);
+});
+empty.hidden = filtered.length !== 0;
+}
+
+function showDetail(e) {
+document.getElementById("dnum").textContent = `ELEMENT · ${String(e.n).padStart(3,"0")}`;
+document.getElementById("dsym").textContent = e.s;
+document.getElementById("dname").textContent = e.name;
+document.getElementById("dcat").textContent = e.cat;
+document.getElementById("dstate").textContent = e.state;
+document.getElementById("dmineral").textContent = e.mineral;
+document.getElementById("denv").textContent = e.env;
+document.getElementById("duse").textContent = e.use;
+document.getElementById("dmeaning").textContent =
+e.mineral.includes("인공") || e.env.includes("인공")
+? "자연계의 일반적인 광석 분포보다는 인공 생성 및 방사성 붕괴와 관련해 다루는 것이 적절합니다."
+: `${e.name}이(가) 어떤 광물 또는 지질 환경에 결합되어 존재하는지를 보여줍니다.`;
+detail.classList.add("show");
+detail.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+search.addEventListener("input", render);
+category.addEventListener("change", render);
+document.getElementById("close").addEventListener("click", () => detail.classList.remove("show"));
+render();
+</script>
+</body>
+</html>

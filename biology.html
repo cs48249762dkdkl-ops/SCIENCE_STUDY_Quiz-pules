@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BIOLOGY · SCIENCE STUDY</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family:
+                Arial,
+                "Noto Sans KR",
+                sans-serif;
+
+            background: #111;
+            color: #eee;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 6%;
+
+            background: rgba(17,17,17,0.96);
+
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #888;
+
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        main {
+            width: 88%;
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 430px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .hero-label,
+        .label {
+            color: #888;
+
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            margin: 24px 0;
+
+            font-size: clamp(70px, 12vw, 150px);
+
+            line-height: 0.88;
+
+            letter-spacing: -7px;
+        }
+
+        .hero h1 strong {
+            font-weight: 400;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #aaa;
+
+            font-size: 17px;
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 90px 0;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .section-title {
+            margin-bottom: 10px;
+
+            font-size: 42px;
+            letter-spacing: -2px;
+        }
+
+        .section-description {
+            margin-bottom: 35px;
+
+            color: #888;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 1px;
+
+            margin-top: 50px;
+
+            background: #333;
+        }
+
+        .stat {
+            padding: 28px;
+
+            background: #111;
+        }
+
+        .stat strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-size: 32px;
+        }
+
+        .stat span {
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        /* CARDS */
+
+        .topic-grid,
+        .detail-grid,
+        .process-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .card {
+            min-height: 190px;
+
+            padding: 28px;
+
+            border: 1px solid #333;
+
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: #777;
+
+            transform: translateY(-3px);
+        }
+
+        .card .num {
+            margin-bottom: 25px;
+
+            color: #777;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+
+            font-size: 23px;
+        }
+
+        .card p {
+            color: #999;
+
+            font-size: 14px;
+        }
+
+        /* FORMULA */
+
+        .formula-box {
+            margin-top: 30px;
+
+            padding: 35px;
+
+            border: 1px solid #333;
+        }
+
+        .formula {
+            margin: 15px 0;
+
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+        }
+
+        .formula-desc {
+            color: #999;
+
+            font-size: 14px;
+        }
+
+        /* CALCULATOR */
+
+        .calculator {
+            margin-top: 35px;
+
+            padding: 35px;
+
+            border: 1px solid #333;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            margin: 20px 0;
+        }
+
+        .field label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+        input,
+        select {
+            width: 100%;
+
+            padding: 14px;
+
+            background: #191919;
+
+            border: 1px solid #444;
+
+            color: #fff;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #aaa;
+        }
+
+        button {
+            padding: 14px 25px;
+
+            background: #eee;
+            color: #111;
+
+            border: 0;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ccc;
+        }
+
+        .results {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 1px;
+
+            margin-top: 25px;
+
+            background: #333;
+        }
+
+        .result {
+            padding: 22px;
+
+            background: #151515;
+        }
+
+        .result span {
+            display: block;
+
+            color: #888;
+
+            font-size: 12px;
+        }
+
+        .result strong {
+            display: block;
+
+            margin-top: 7px;
+
+            font-size: 22px;
+        }
+
+        .error {
+            margin-top: 15px;
+
+            color: #e88;
+        }
+
+        /* NOTE */
+
+        .note {
+            padding: 20px 25px;
+
+            background: #171717;
+
+            border-left: 2px solid #777;
+
+            color: #aaa;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 45px 0;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            main {
+                width: 90%;
+            }
+
+            .hero {
+                min-height: 420px;
+            }
+
+            .hero h1 {
+                font-size: 68px;
+                letter-spacing: -4px;
+            }
+
+            .stats,
+            .topic-grid,
+            .detail-grid,
+            .process-grid,
+            .results {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="app.html" class="logo">
+
+        SCIENCE STUDY
+
+        <span>
+            SCIENCE LEARNING APP
+        </span>
+
+    </a>
+
+
+    <a href="app.html" class="back-link">
+
+        ← SCIENCE STUDY
+
+    </a>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-label">
+            APPLICATION · 13 · BIOLOGY
+        </div>
+
+
+        <h1>
+
+            BIO<br>
+
+            <strong>LOGY</strong>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            생명체의 구조와 기능,
+            유전과 진화,
+            생태계와 생명 현상을
+            기초 개념부터 탐구합니다.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- BIOLOGY OVERVIEW -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            BIOLOGY
+        </h2>
+
+
+        <p class="section-description">
+
+            생명 현상을 이해하는 핵심 영역을 살펴봅니다.
+
+        </p>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>01</strong>
+
+                <span>
+                    세포생물학
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>02</strong>
+
+                <span>
+                    유전학
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>03</strong>
+
+                <span>
+                    생태학
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>04</strong>
+
+                <span>
+                    진화생물학
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CORE AREAS -->
+
+    <section class="section">
+
+        <div class="label">
+            CORE AREAS
+        </div>
+
+
+        <h2 class="section-title">
+            생물학의 주요 분야
+        </h2>
+
+
+        <div
+            class="topic-grid"
+            style="margin-top:35px"
+        >
+
+            <div class="card">
+
+                <div class="num">
+                    01 · CELL
+                </div>
+
+                <h3>
+                    세포
+                </h3>
+
+                <p>
+                    세포막, 세포소기관,
+                    물질 이동과 세포 분열을 학습합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    02 · GENETICS
+                </div>
+
+                <h3>
+                    유전
+                </h3>
+
+                <p>
+                    DNA, 유전자, 염색체와
+                    유전 정보의 전달을 탐구합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    03 · EVOLUTION
+                </div>
+
+                <h3>
+                    진화
+                </h3>
+
+                <p>
+                    변이와 자연선택을 통해
+                    생물 다양성이 형성되는 과정을 살펴봅니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    04 · ECOLOGY
+                </div>
+
+                <h3>
+                    생태계
+                </h3>
+
+                <p>
+                    개체군, 군집, 생태계와
+                    물질 순환 및 에너지 흐름을 탐구합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    05 · PHYSIOLOGY
+                </div>
+
+                <h3>
+                    생리학
+                </h3>
+
+                <p>
+                    생물의 기관과 조직이
+                    어떻게 기능하는지 학습합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    06 · MICROBIOLOGY
+                </div>
+
+                <h3>
+                    미생물학
+                </h3>
+
+                <p>
+                    세균과 바이러스 등
+                    미시적 생명체를 탐구합니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CELL -->
+
+    <section class="section">
+
+        <div class="label">
+            CELL BIOLOGY
+        </div>
+
+
+        <h2 class="section-title">
+            세포의 기본 구조
+        </h2>
+
+
+        <div
+            class="detail-grid"
+            style="margin-top:35px"
+        >
+
+            <div class="card">
+
+                <h3>
+                    세포막
+                </h3>
+
+                <p>
+                    세포 내부와 외부를 구분하며
+                    물질의 이동을 조절합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    핵
+                </h3>
+
+                <p>
+                    유전 물질인 DNA를 포함하고
+                    유전자 발현을 조절합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    미토콘드리아
+                </h3>
+
+                <p>
+                    세포 호흡과 ATP 생성에
+                    중요한 역할을 합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    리보솜
+                </h3>
+
+                <p>
+                    mRNA의 정보를 이용하여
+                    단백질을 합성합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    엽록체
+                </h3>
+
+                <p>
+                    식물 세포에서
+                    광합성이 일어나는 세포소기관입니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    세포질
+                </h3>
+
+                <p>
+                    다양한 세포 내
+                    화학 반응이 일어나는 공간입니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GENETICS -->
+
+    <section class="section">
+
+        <div class="label">
+            GENETICS
+        </div>
+
+
+        <h2 class="section-title">
+            유전 정보
+        </h2>
+
+
+        <div class="formula-box">
+
+            <h3>
+                DNA → RNA → 단백질
+            </h3>
+
+
+            <p class="formula">
+
+                DNA → mRNA → Protein
+
+            </p>
+
+
+            <p class="formula-desc">
+
+                유전 정보가 전사와 번역 과정을 거쳐
+                단백질 합성으로 이어지는 기본적인 흐름입니다.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ECOLOGY -->
+
+    <section class="section">
+
+        <div class="label">
+            ECOLOGY
+        </div>
+
+
+        <h2 class="section-title">
+            생태계의 에너지 흐름
+        </h2>
+
+
+        <div
+            class="process-grid"
+            style="margin-top:35px"
+        >
+
+            <div class="card">
+
+                <div class="num">
+                    01
+                </div>
+
+                <h3>
+                    생산자
+                </h3>
+
+                <p>
+                    광합성 등을 통해
+                    외부 에너지를 유기물에 저장합니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    02
+                </div>
+
+                <h3>
+                    소비자
+                </h3>
+
+                <p>
+                    다른 생물을 섭취하여
+                    생명 활동에 필요한 에너지를 얻습니다.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="num">
+                    03
+                </div>
+
+                <h3>
+                    분해자
+                </h3>
+
+                <p>
+                    유기물을 분해하여
+                    물질이 생태계에서 순환하도록 돕습니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BIOLOGY CALCULATOR -->
+
+    <section class="section">
+
+        <div class="label">
+            BIOLOGY CALCULATOR
+        </div>
+
+
+        <h2 class="section-title">
+            개체군 성장 계산
+        </h2>
+
+
+        <p class="section-description">
+
+            단순한 지수 성장 모델을 이용해
+            개체군 변화를 계산합니다.
+
+        </p>
+
+
+        <div class="calculator">
+
+
+            <div class="form-row">
+
+
+                <div class="field">
+
+                    <label for="initial">
+
+                        초기 개체 수
+
+                    </label>
+
+
+                    <input
+                        id="initial"
+                        type="number"
+                        min="0"
+                        step="any"
+                        value="100"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="rate">
+
+                        성장률 (%)
+
+                    </label>
+
+
+                    <input
+                        id="rate"
+                        type="number"
+                        step="any"
+                        value="10"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="field">
+
+                    <label for="time">
+
+                        시간
+
+                    </label>
+
+
+                    <input
+                        id="time"
+                        type="number"
+                        min="0"
+                        step="any"
+                        value="5"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="interval">
+
+                        시간 단위
+
+                    </label>
+
+
+                    <select id="interval">
+
+                        <option value="년">
+                            년
+                        </option>
+
+                        <option value="개월">
+                            개월
+                        </option>
+
+                        <option value="일">
+                            일
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <button id="calculateGrowth">
+
+                계산하기
+
+            </button>
+
+
+
+            <div
+                id="biologyError"
+                class="error"
+            ></div>
+
+
+
+            <div class="results">
+
+
+                <div class="result">
+
+                    <span>
+                        초기 개체 수
+                    </span>
+
+                    <strong id="initialResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result">
+
+                    <span>
+                        최종 개체 수
+                    </span>
+
+                    <strong id="finalResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result">
+
+                    <span>
+                        증가한 개체 수
+                    </span>
+
+                    <strong id="increaseResult">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STUDY NOTE -->
+
+    <section class="section">
+
+        <div class="label">
+            STUDY NOTE
+        </div>
+
+
+        <h2 class="section-title">
+            학습 포인트
+        </h2>
+
+
+        <div class="note">
+
+            생물학은 세포 수준의 구조와 기능에서 시작하여
+            개체, 개체군, 군집, 생태계까지
+            서로 연결된 여러 수준에서 생명 현상을 설명합니다.
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div
+        style="
+            width:88%;
+            max-width:1200px;
+            margin:auto;
+        "
+    >
+
+        SCIENCE STUDY · BIOLOGY
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+const initialInput =
+    document.getElementById("initial");
+
+const rateInput =
+    document.getElementById("rate");
+
+const timeInput =
+    document.getElementById("time");
+
+const intervalInput =
+    document.getElementById("interval");
+
+const errorBox =
+    document.getElementById("biologyError");
+
+
+document
+    .getElementById("calculateGrowth")
+    .addEventListener("click", () => {
+
+
+        const initial =
+            Number(initialInput.value);
+
+
+        const rate =
+            Number(rateInput.value);
+
+
+        const time =
+            Number(timeInput.value);
+
+
+        errorBox.textContent = "";
+
+
+        if (
+            !Number.isFinite(initial) ||
+            initial < 0
+        ) {
+
+            errorBox.textContent =
+                "초기 개체 수를 0 이상으로 입력하세요.";
+
+            return;
+        }
+
+
+        if (
+            !Number.isFinite(rate) ||
+            rate <= -100
+        ) {
+
+            errorBox.textContent =
+                "성장률은 -100%보다 크게 입력하세요.";
+
+            return;
+        }
+
+
+        if (
+            !Number.isFinite(time) ||
+            time < 0
+        ) {
+
+            errorBox.textContent =
+                "시간을 0 이상으로 입력하세요.";
+
+            return;
+        }
+
+
+        /*
+         * 단순 지수 성장 모델
+         *
+         * 최종 개체 수 =
+         * 초기 개체 수 × (1 + 성장률)^시간
+         */
+
+        const finalPopulation =
+            initial *
+            Math.pow(
+                1 + rate / 100,
+                time
+            );
+
+
+        const increase =
+            finalPopulation - initial;
+
+
+        document
+            .getElementById("initialResult")
+            .textContent =
+            `${initial.toLocaleString()} 개체`;
+
+
+        document
+            .getElementById("finalResult")
+            .textContent =
+            `${finalPopulation.toLocaleString(
+                undefined,
+                {
+                    maximumFractionDigits: 2
+                }
+            )} 개체`;
+
+
+        document
+            .getElementById("increaseResult")
+            .textContent =
+            `${increase.toLocaleString(
+                undefined,
+                {
+                    maximumFractionDigits: 2
+                }
+            )} 개체`;
+
+    });
+
+
+/* 처음 페이지를 열었을 때 기본값 계산 */
+
+document
+    .getElementById("calculateGrowth")
+    .click();
+
+</script>
+
+
+</body>
+</html>

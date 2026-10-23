@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHEMISTRY · SCIENCE STUDY</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0d;color:#f5f5f5;font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.header{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.94);border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
+.header-inner{max-width:1100px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:14px;letter-spacing:3px;font-weight:700}
+.back{font-size:13px;color:#aaa}
+.back:hover{color:#fff}
+.hero{padding:110px 28px 90px;border-bottom:1px solid #292929}
+.hero-inner{max-width:1100px;margin:auto}
+.label{font-size:11px;letter-spacing:4px;color:#888;margin-bottom:18px}
+h1{font-size:clamp(52px,9vw,100px);line-height:.95;margin:0 0 28px;letter-spacing:-4px}
+.hero p{max-width:650px;color:#aaa;font-size:17px;line-height:1.9;margin:0}
+.stats{max-width:1100px;margin:-1px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px 18px;border:1px solid #292929;border-top:0}
+.stat strong{display:block;font-size:27px;margin-bottom:5px}.stat span{font-size:12px;color:#777}
+section{padding:90px 28px;border-bottom:1px solid #292929}
+.inner{max-width:1100px;margin:auto}
+.section-title{font-size:40px;margin:0 0 12px;letter-spacing:-1px}
+.desc{max-width:700px;color:#999;margin:0 0 38px}
+.periodic{display:grid;grid-template-columns:repeat(18,1fr);gap:5px}
+.element{min-height:64px;padding:8px 6px;border:1px solid #333;background:#171717;cursor:pointer;transition:.2s}
+.element:hover,.element.active{border-color:#aaa;transform:translateY(-2px)}
+.element .n{font-size:9px;color:#666}.element .s{font-size:21px;font-weight:700}.element .name{font-size:9px;color:#aaa}
+.gap{height:10px}
+.controls{display:flex;gap:10px;margin:28px 0}
+input,select{width:100%;padding:14px 15px;background:#171717;color:#fff;border:1px solid #3a3a3a;font-size:14px;outline:none}
+input:focus,select:focus{border-color:#aaa}
+.detail{min-height:170px;padding:25px;border:1px solid #333;background:#151515}
+.detail .symbol{font-size:42px;font-weight:700}.detail h3{margin:0 0 8px;font-size:26px}.detail p{color:#aaa;margin:5px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{padding:26px;border:1px solid #333;background:#151515}
+.card .num{font-size:10px;letter-spacing:3px;color:#777}.card h3{margin:12px 0 8px;font-size:22px}.card p{color:#999;margin:0}
+.formula-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.formula{padding:28px;border:1px solid #333;background:#151515}
+.formula code{display:block;font-size:24px;margin:8px 0 14px;color:#fff}
+.formula p{color:#999;margin:0}
+.calc{max-width:720px;padding:30px;border:1px solid #333;background:#151515}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.field label{display:block;font-size:12px;color:#888;margin-bottom:7px}
+button{width:100%;padding:15px;background:#f5f5f5;color:#111;border:0;font-weight:700;cursor:pointer}
+button:hover{background:#ddd}
+.result{margin-top:18px;padding:20px;border:1px solid #333;background:#101010;display:none}
+.result div{padding:8px 0;border-bottom:1px solid #282828}.result div:last-child{border-bottom:0}
+.reference{color:#999;font-size:14px}
+.footer{padding:35px 28px;color:#666;font-size:12px}
+@media(max-width:850px){
+.stats{grid-template-columns:repeat(2,1fr)}
+.periodic{grid-template-columns:repeat(9,1fr)}
+.cards,.formula-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.hero{padding:80px 20px 70px}section{padding:70px 20px}.header-inner{padding:16px 20px}
+.stats{padding:0 20px}.periodic{grid-template-columns:repeat(6,1fr)}
+.row{grid-template-columns:1fr}.element{min-height:58px}.element .name{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="app.html">SCIENCE STUDY</a>
+    <a class="back" href="app.html">← BACK TO SCIENCE STUDY</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="label">SCIENCE STUDY · CHEMISTRY</div>
+    <h1>CHEMISTRY</h1>
+    <p>물질을 이루는 원소와 원자, 화학 결합과 반응, 산·염기 및 화학량론을 탐구하는 화학 학습 공간입니다.</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>118</strong><span>원소</span></div>
+  <div class="stat"><strong>7</strong><span>주기</span></div>
+  <div class="stat"><strong>18</strong><span>족</span></div>
+  <div class="stat"><strong>3</strong><span>대표 결합</span></div>
+</div>
+
+<section id="periodic">
+<div class="inner">
+  <div class="label">CHEMISTRY · 01</div>
+  <h2 class="section-title">주기율표</h2>
+  <p class="desc">원자번호를 기준으로 배열한 원소를 선택하면 기본 정보와 대표적인 자연계 존재 형태를 확인할 수 있습니다.</p>
+  <div class="periodic" id="periodicTable"></div>
+  <div class="controls">
+    <input id="elementSearch" type="search" placeholder="원소 이름·기호·원자번호 검색">
+    <select id="categoryFilter">
+      <option value="all">전체</option>
+      <option value="metal">금속</option>
+      <option value="nonmetal">비금속</option>
+      <option value="metalloid">준금속</option>
+      <option value="noble">비활성 기체</option>
+    </select>
+  </div>
+  <div class="detail" id="elementDetail">
+    <div class="symbol">H</div><h3>수소 · Hydrogen</h3>
+    <p>원자번호 1 · 비금속 · 상온에서 기체</p>
+    <p>가장 가벼운 원소이며 별의 핵융합과 다양한 화학 반응에서 중요한 역할을 합니다.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">CHEMISTRY · 02</div>
+  <h2 class="section-title">화학 결합</h2>
+  <p class="desc">원자들이 전자를 주고받거나 공유하면서 안정한 구조를 이루는 대표적인 결합을 살펴봅니다.</p>
+  <div class="cards">
+    <div class="card"><div class="num">BOND · 01</div><h3>이온 결합</h3><p>양이온과 음이온 사이의 정전기적 인력으로 형성됩니다. 대표적으로 NaCl이 있습니다.</p></div>
+    <div class="card"><div class="num">BOND · 02</div><h3>공유 결합</h3><p>원자들이 전자쌍을 공유하여 결합합니다. H₂O와 CO₂ 등이 대표적인 예입니다.</p></div>
+    <div class="card"><div class="num">BOND · 03</div><h3>금속 결합</h3><p>금속 원자 사이에서 전자가 여러 원자에 걸쳐 이동할 수 있는 구조를 형성합니다.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">CHEMISTRY · 03</div>
+  <h2 class="section-title">화학식과 기본식</h2>
+  <div class="formula-grid">
+    <div class="formula"><div class="label">MOLE</div><code>n = m / M</code><p>물질의 질량 m과 몰질량 M으로 물질량 n을 계산할 수 있습니다.</p></div>
+    <div class="formula"><div class="label">MOLARITY</div><code>M = n / V</code><p>몰농도는 용액의 부피 V에 대한 용질의 물질량 n으로 나타냅니다.</p></div>
+    <div class="formula"><div class="label">IDEAL GAS</div><code>PV = nRT</code><p>이상기체의 압력, 부피, 물질량, 온도 사이의 관계를 나타냅니다.</p></div>
+    <div class="formula"><div class="label">pH</div><code>pH = −log₁₀[H⁺]</code><p>수소 이온 농도를 이용해 수용액의 산성 정도를 나타냅니다.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">CHEMISTRY · 04</div>
+  <h2 class="section-title">몰 계산기</h2>
+  <p class="desc">질량과 몰질량을 입력해 물질량을 계산합니다.</p>
+  <div class="calc">
+    <div class="row">
+      <div class="field"><label for="mass">질량 (g)</label><input id="mass" type="number" min="0" step="any" placeholder="예: 18"></div>
+      <div class="field"><label for="molarMass">몰질량 (g/mol)</label><input id="molarMass" type="number" min="0" step="any" placeholder="예: 18"></div>
+    </div>
+    <button id="calculate">계산하기</button>
+    <div class="result" id="result"></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">CHEMISTRY · 05</div>
+  <h2 class="section-title">화학 반응의 기본</h2>
+  <p class="desc">반응물과 생성물의 관계, 에너지 변화, 산화·환원 등은 화학 반응을 이해하는 핵심 요소입니다.</p>
+  <div class="cards">
+    <div class="card"><div class="num">REACTION · 01</div><h3>산·염기</h3><p>산과 염기의 성질, 수소 이온 농도, 중화 반응을 학습합니다.</p></div>
+    <div class="card"><div class="num">REACTION · 02</div><h3>산화·환원</h3><p>전자 이동과 산화수 변화를 통해 산화와 환원 반응을 이해합니다.</p></div>
+    <div class="card"><div class="num">REACTION · 03</div><h3>화학량론</h3><p>균형 잡힌 화학 반응식을 이용해 반응물과 생성물의 양적 관계를 계산합니다.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">CHEMISTRY · REFERENCE</div>
+  <h2 class="section-title">학습 범위</h2>
+  <p class="reference">원자 구조 · 주기율표 · 화학 결합 · 화학식 · 몰과 몰농도 · 기체 법칙 · 산·염기 · 산화·환원 · 화학량론</p>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="inner">SCIENCE STUDY · CHEMISTRY</div>
+</footer>
+
+<script>
+const elements = [
+["H","수소","Hydrogen","비금속","기체"],["He","헬륨","Helium","noble","기체"],
+["Li","리튬","Lithium","metal","고체"],["Be","베릴륨","Beryllium","metal","고체"],["B","붕소","Boron","metalloid","고체"],["C","탄소","Carbon","nonmetal","고체"],["N","질소","Nitrogen","nonmetal","기체"],["O","산소","Oxygen","nonmetal","기체"],["F","플루오린","Fluorine","nonmetal","기체"],["Ne","네온","Neon","noble","기체"],
+["Na","나트륨","Sodium","metal","고체"],["Mg","마그네슘","Magnesium","metal","고체"],["Al","알루미늄","Aluminium","metal","고체"],["Si","규소","Silicon","metalloid","고체"],["P","인","Phosphorus","nonmetal","고체"],["S","황","Sulfur","nonmetal","고체"],["Cl","염소","Chlorine","nonmetal","기체"],["Ar","아르곤","Argon","noble","기체"],
+["K","칼륨","Potassium","metal","고체"],["Ca","칼슘","Calcium","metal","고체"],["Sc","스칸듐","Scandium","metal","고체"],["Ti","티타늄","Titanium","metal","고체"],["V","바나듐","Vanadium","metal","고체"],["Cr","크로뮴","Chromium","metal","고체"],["Mn","망가니즈","Manganese","metal","고체"],["Fe","철","Iron","metal","고체"],["Co","코발트","Cobalt","metal","고체"],["Ni","니켈","Nickel","metal","고체"],["Cu","구리","Copper","metal","고체"],["Zn","아연","Zinc","metal","고체"],["Ga","갈륨","Gallium","metal","고체"],["Ge","저마늄","Germanium","metalloid","고체"],["As","비소","Arsenic","metalloid","고체"],["Se","셀레늄","Selenium","nonmetal","고체"],["Br","브로민","Bromine","nonmetal","액체"],["Kr","크립톤","Krypton","noble","기체"],
+["Rb","루비듐","Rubidium","metal","고체"],["Sr","스트론튬","Strontium","metal","고체"],["Y","이트륨","Yttrium","metal","고체"],["Zr","지르코늄","Zirconium","metal","고체"],["Nb","나이오븀","Niobium","metal","고체"],["Mo","몰리브데넘","Molybdenum","metal","고체"],["Tc","테크네튬","Technetium","metal","고체"],["Ru","루테늄","Ruthenium","metal","고체"],["Rh","로듐","Rhodium","metal","고체"],["Pd","팔라듐","Palladium","metal","고체"],["Ag","은","Silver","metal","고체"],["Cd","카드뮴","Cadmium","metal","고체"],["In","인듐","Indium","metal","고체"],["Sn","주석","Tin","metal","고체"],["Sb","안티모니","Antimony","metalloid","고체"],["Te","텔루륨","Tellurium","metalloid","고체"],["I","아이오딘","Iodine","nonmetal","고체"],["Xe","제논","Xenon","noble","기체"],
+["Cs","세슘","Caesium","metal","고체"],["Ba","바륨","Barium","metal","고체"],["La","란타넘","Lanthanum","metal","고체"],["Ce","세륨","Cerium","metal","고체"],["Pr","프라세오디뮴","Praseodymium","metal","고체"],["Nd","네오디뮴","Neodymium","metal","고체"],["Pm","프로메튬","Promethium","metal","고체"],["Sm","사마륨","Samarium","metal","고체"],["Eu","유로퓸","Europium","metal","고체"],["Gd","가돌리늄","Gadolinium","metal","고체"],["Tb","터븀","Terbium","metal","고체"],["Dy","디스프로슘","Dysprosium","metal","고체"],["Ho","홀뮴","Holmium","metal","고체"],["Er","어븀","Erbium","metal","고체"],["Tm","툴륨","Thulium","metal","고체"],["Yb","이터븀","Ytterbium","metal","고체"],["Lu","루테튬","Lutetium","metal","고체"],
+["Hf","하프늄","Hafnium","metal","고체"],["Ta","탄탈럼","Tantalum","metal","고체"],["W","텅스텐","Tungsten","metal","고체"],["Re","레늄","Rhenium","metal","고체"],["Os","오스뮴","Osmium","metal","고체"],["Ir","이리듐","Iridium","metal","고체"],["Pt","백금","Platinum","metal","고체"],["Au","금","Gold","metal","고체"],["Hg","수은","Mercury","metal","액체"],["Tl","탈륨","Thallium","metal","고체"],["Pb","납","Lead","metal","고체"],["Bi","비스무트","Bismuth","metal","고체"],["Po","폴로늄","Polonium","metal","고체"],["At","아스타틴","Astatine","nonmetal","고체"],["Rn","라돈","Radon","noble","기체"],
+["Fr","프랑슘","Francium","metal","고체"],["Ra","라듐","Radium","metal","고체"],["Ac","악티늄","Actinium","metal","고체"],["Th","토륨","Thorium","metal","고체"],["Pa","프로트악티늄","Protactinium","metal","고체"],["U","우라늄","Uranium","metal","고체"],["Np","넵투늄","Neptunium","metal","고체"],["Pu","플루토늄","Plutonium","metal","고체"],["Am","아메리슘","Americium","metal","고체"],["Cm","퀴륨","Curium","metal","고체"],["Bk","버클륨","Berkelium","metal","고체"],["Cf","캘리포늄","Californium","metal","고체"],["Es","아인슈타이늄","Einsteinium","metal","고체"],["Fm","페르뮴","Fermium","metal","고체"],["Md","멘델레븀","Mendelevium","metal","고체"],["No","노벨륨","Nobelium","metal","고체"],["Lr","로렌슘","Lawrencium","metal","고체"],
+["Rf","러더퍼듐","Rutherfordium","metal","고체"],["Db","더브늄","Dubnium","metal","고체"],["Sg","시보귬","Seaborgium","metal","고체"],["Bh","보륨","Bohrium","metal","고체"],["Hs","하슘","Hassium","metal","고체"],["Mt","마이트너륨","Meitnerium","metal","고체"],["Ds","다름슈타튬","Darmstadtium","metal","고체"],["Rg","뢴트게늄","Roentgenium","metal","고체"],["Cn","코페르니슘","Copernicium","metal","고체"],["Nh","니호늄","Nihonium","metal","고체"],["Fl","플레로븀","Flerovium","metal","고체"],["Mc","모스코븀","Moscovium","metal","고체"],["Lv","리버모륨","Livermorium","metal","고체"],["Ts","테네신","Tennessine","nonmetal","고체"],["Og","오가네손","Oganesson","noble","기체"]
+];
+
+const table=document.getElementById("periodicTable");
+const search=document.getElementById("elementSearch");
+const filter=document.getElementById("categoryFilter");
+const detail=document.getElementById("elementDetail");
+
+function showElements(){
+  const q=search.value.trim().toLowerCase();
+  const f=filter.value;
+  table.innerHTML="";
+  elements.forEach((e,i)=>{
+    const [s,name,en,cat,state]=e;
+    const match=!q || s.toLowerCase().includes(q)||name.toLowerCase().includes(q)||en.toLowerCase().includes(q)||String(i+1)===q;
+    const catMatch=f==="all" || cat===f;
+    if(!match||!catMatch)return;
+    const el=document.createElement("div");
+    el.className="element";
+    el.innerHTML=`<div class="n">${i+1}</div><div class="s">${s}</div><div class="name">${name}</div>`;
+    el.onclick=()=>showDetail(i);
+    table.appendChild(el);
+  });
+}
+function showDetail(i){
+  const [s,name,en,cat,state]=elements[i];
+  const label={metal:"금속",nonmetal:"비금속",metalloid:"준금속",noble:"비활성 기체"}[cat]||cat;
+  detail.innerHTML=`<div class="symbol">${s}</div><h3>${name} · ${en}</h3><p>원자번호 ${i+1} · ${label} · 상온에서 ${state}</p><p>주기율표에서 원자번호 ${i+1}에 해당하는 원소입니다. 자연계 산출 형태와 화학적 성질은 원소에 따라 다릅니다.</p>`;
+}
+search.addEventListener("input",showElements);
+filter.addEventListener("change",showElements);
+showElements();
+
+document.getElementById("calculate").addEventListener("click",()=>{
+  const m=Number(document.getElementById("mass").value);
+  const M=Number(document.getElementById("molarMass").value);
+  const result=document.getElementById("result");
+  if(!Number.isFinite(m)||!Number.isFinite(M)||m<0||M<=0){
+    result.style.display="block";
+    result.textContent="질량은 0 이상, 몰질량은 0보다 큰 값으로 입력하세요.";
+    return;
+  }
+  const n=m/M;
+  result.style.display="block";
+  result.innerHTML=`<div>물질량 n = <strong>${n.toFixed(6)} mol</strong></div><div>계산식: n = m / M = ${m} / ${M}</div>`;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHYSICS · SCIENCE STUDY</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0d0d0d;color:#f5f5f5;font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.header{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.94);border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
+.header-inner{max-width:1100px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:14px;letter-spacing:3px;font-weight:700}.back{font-size:13px;color:#aaa}.back:hover{color:#fff}
+.hero{padding:110px 28px 90px;border-bottom:1px solid #292929}.hero-inner{max-width:1100px;margin:auto}
+.label{font-size:11px;letter-spacing:4px;color:#888;margin-bottom:18px}
+h1{font-size:clamp(52px,9vw,100px);line-height:.95;margin:0 0 28px;letter-spacing:-4px}
+.hero p{max-width:700px;color:#aaa;font-size:17px;line-height:1.9;margin:0}
+.stats{max-width:1100px;margin:auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px 18px;border:1px solid #292929;border-top:0}.stat strong{display:block;font-size:27px}.stat span{font-size:12px;color:#777}
+section{padding:90px 28px;border-bottom:1px solid #292929}.inner{max-width:1100px;margin:auto}
+.section-title{font-size:40px;margin:0 0 12px;letter-spacing:-1px}.desc{max-width:720px;color:#999;margin:0 0 38px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:28px;border:1px solid #333;background:#151515}
+.card .num{font-size:10px;letter-spacing:3px;color:#777}.card h3{margin:12px 0 8px;font-size:22px}.card p{color:#999;margin:0}
+.formula-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.formula{padding:28px;border:1px solid #333;background:#151515}
+.formula code{display:block;font-size:25px;margin:8px 0 14px;color:#fff}.formula p{color:#999;margin:0}
+.calc{max-width:760px;padding:30px;border:1px solid #333;background:#151515}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.field label{display:block;font-size:12px;color:#888;margin-bottom:7px}
+input,select{width:100%;padding:14px 15px;background:#101010;color:#fff;border:1px solid #3a3a3a;font-size:14px;outline:none}
+input:focus,select:focus{border-color:#aaa}button{width:100%;padding:15px;background:#f5f5f5;color:#111;border:0;font-weight:700;cursor:pointer}
+button:hover{background:#ddd}.result{margin-top:18px;padding:20px;border:1px solid #333;background:#101010;display:none}
+.result div{padding:8px 0;border-bottom:1px solid #282828}.result div:last-child{border-bottom:0}
+.note{padding:22px;border-left:2px solid #555;background:#151515;color:#aaa}
+.footer{padding:35px 28px;color:#666;font-size:12px}
+@media(max-width:850px){.stats{grid-template-columns:repeat(2,1fr)}.cards,.formula-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.hero{padding:80px 20px 70px}section{padding:70px 20px}.header-inner{padding:16px 20px}.stats{padding:0 20px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="app.html">SCIENCE STUDY</a>
+    <a class="back" href="app.html">← BACK TO SCIENCE STUDY</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="label">SCIENCE STUDY · PHYSICS</div>
+    <h1>PHYSICS</h1>
+    <p>운동과 힘, 에너지, 파동, 전자기학과 상대성이론을 수식과 계산을 통해 탐구하는 물리학 학습 공간입니다.</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>01</strong><span>역학</span></div>
+  <div class="stat"><strong>02</strong><span>파동</span></div>
+  <div class="stat"><strong>03</strong><span>전자기학</span></div>
+  <div class="stat"><strong>04</strong><span>상대성이론</span></div>
+</div>
+
+<section>
+<div class="inner">
+  <div class="label">PHYSICS · 01</div>
+  <h2 class="section-title">물리학의 핵심 분야</h2>
+  <p class="desc">기본적인 운동에서 우주의 시공간까지 서로 연결되는 물리학의 주요 영역을 학습합니다.</p>
+  <div class="cards">
+    <div class="card"><div class="num">MECHANICS</div><h3>역학</h3><p>힘, 운동, 가속도, 운동량과 에너지의 관계를 탐구합니다.</p></div>
+    <div class="card"><div class="num">WAVE</div><h3>파동</h3><p>진동, 파장, 주파수, 소리와 빛의 파동 현상을 다룹니다.</p></div>
+    <div class="card"><div class="num">ELECTROMAGNETISM</div><h3>전자기학</h3><p>전기장, 자기장, 전류와 전자기 유도의 관계를 탐구합니다.</p></div>
+    <div class="card"><div class="num">THERMODYNAMICS</div><h3>열역학</h3><p>열, 온도, 내부에너지와 에너지 보존의 관계를 학습합니다.</p></div>
+    <div class="card"><div class="num">OPTICS</div><h3>광학</h3><p>빛의 반사, 굴절, 간섭과 같은 현상을 이해합니다.</p></div>
+    <div class="card"><div class="num">RELATIVITY</div><h3>상대성이론</h3><p>시간과 공간, 중력과 운동을 시공간의 관점에서 탐구합니다.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">PHYSICS · 02</div>
+  <h2 class="section-title">핵심 공식</h2>
+  <div class="formula-grid">
+    <div class="formula"><div class="label">NEWTON · 2ND LAW</div><code>F = ma</code><p>힘은 질량과 가속도의 곱으로 나타낼 수 있습니다.</p></div>
+    <div class="formula"><div class="label">KINETIC ENERGY</div><code>Eₖ = ½mv²</code><p>운동하는 물체가 가지는 운동에너지를 나타냅니다.</p></div>
+    <div class="formula"><div class="label">MOMENTUM</div><code>p = mv</code><p>물체의 질량과 속도로 운동량을 나타냅니다.</p></div>
+    <div class="formula"><div class="label">MASS-ENERGY</div><code>E = mc²</code><p>질량과 에너지가 서로 연결되어 있음을 나타내는 관계식입니다.</p></div>
+    <div class="formula"><div class="label">TIME DILATION</div><code>Δt = γΔτ</code><p>빠르게 움직이는 기준계에서 시간 간격이 어떻게 달라지는지 나타냅니다.</p></div>
+    <div class="formula"><div class="label">LORENTZ FACTOR</div><code>γ = 1 / √(1 − v²/c²)</code><p>속도에 따른 상대론적 효과의 크기를 나타내는 계수입니다.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">PHYSICS · 03</div>
+  <h2 class="section-title">시간 지연 계산기</h2>
+  <p class="desc">특수상대성이론의 시간 지연 관계를 이용해 우주선 내부의 고유시간과 지구 기준 시간을 비교합니다.</p>
+  <div class="calc">
+    <div class="row">
+      <div class="field"><label for="speed">속도 (% of c)</label><input id="speed" type="number" min="0" max="99.999999" step="any" placeholder="예: 80"></div>
+      <div class="field"><label for="proper">우주선 내부 시간</label><input id="proper" type="number" min="0" step="any" placeholder="예: 5"></div>
+    </div>
+    <div class="field" style="margin-bottom:12px">
+      <label for="unit">시간 단위</label>
+      <select id="unit"><option>년</option><option>개월</option><option>일</option></select>
+    </div>
+    <button id="calculate">계산하기</button>
+    <div class="result" id="result"></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="inner">
+  <div class="label">PHYSICS · 04</div>
+  <h2 class="section-title">상대성이론 학습</h2>
+  <p class="desc">현재 SCIENCE STUDY의 연구 주제와 직접 연결되는 영역입니다.</p>
+  <div class="cards">
+    <div class="card"><div class="num">SPECIAL RELATIVITY</div><h3>특수상대성이론</h3><p>빛의 속도와 관성계, 시간 지연과 길이 수축을 탐구합니다.</p></div>
+    <div class="card"><div class="num">GENERAL RELATIVITY</div><h3>일반상대성이론</h3><p>중력을 시공간의 곡률과 연결해 이해합니다.</p></div>
+    <div class="card"><div class="num">ASTROPHYSICS</div><h3>천체물리학</h3><p>중성자별, 펄서, 블랙홀과 같은 천체의 물리적 특성을 탐구합니다.</p></div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer"><div class="inner">SCIENCE STUDY · PHYSICS</div></footer>
+
+<script>
+const speed=document.getElementById("speed");
+const proper=document.getElementById("proper");
+const result=document.getElementById("result");
+
+document.getElementById("calculate").addEventListener("click",()=>{
+  const speedPercent=Number(speed.value);
+  const properTime=Number(proper.value);
+
+  if(!Number.isFinite(speedPercent)||!Number.isFinite(properTime)||
+     speedPercent<0||speedPercent>=100||properTime<0){
+    result.style.display="block";
+    result.textContent="속도는 0 이상 100 미만, 시간은 0 이상으로 입력하세요.";
+    return;
+  }
+
+  const beta=speedPercent/100;
+  const gamma=1/Math.sqrt(1-Math.pow(beta,2));
+  const earthTime=gamma*properTime;
+  const difference=earthTime-properTime;
+  const unit=document.getElementById("unit").value;
+
+  result.style.display="block";
+  result.innerHTML=
+    `<div>로런츠 인자 γ = <strong>${gamma.toFixed(6)}</strong></div>
+     <div>우주선 기준 시간 Δτ = <strong>${properTime} ${unit}</strong></div>
+     <div>지구 기준 시간 Δt = <strong>${earthTime.toFixed(6)} ${unit}</strong></div>
+     <div>시간 차이 = <strong>${difference.toFixed(6)} ${unit}</strong></div>`;
+});
+</script>
+</body>
+</html>

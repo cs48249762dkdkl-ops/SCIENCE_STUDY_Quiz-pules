@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SCIENCE STUDY · ASTRONOMY
+    </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            background: #08090d;
+
+            color: #f4f4f4;
+
+            font-family:
+                Arial,
+                "Noto Sans KR",
+                sans-serif;
+
+            line-height: 1.7;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 20;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 22px 7%;
+
+            background:
+                rgba(8, 9, 13, 0.94);
+
+            border-bottom:
+                1px solid #292c35;
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .logo {
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .logo span {
+
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 10px;
+
+            color: #8f95a3;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .back {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #aeb4c2;
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        main {
+
+            width: 86%;
+
+            max-width: 1180px;
+
+            margin: auto;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+
+            min-height: 600px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-bottom:
+                1px solid #292c35;
+
+        }
+
+
+        .label {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            color: #8f95a3;
+
+        }
+
+
+        .hero h1 {
+
+            margin: 18px 0 20px;
+
+            font-size:
+                clamp(70px, 12vw, 150px);
+
+            line-height: .82;
+
+            letter-spacing: -7px;
+
+        }
+
+
+        .hero h1 strong {
+
+            font-weight: 800;
+
+        }
+
+
+        .hero p {
+
+            max-width: 700px;
+
+            color: #b5bac5;
+
+            font-size: 17px;
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+
+            padding: 90px 0;
+
+            border-bottom:
+                1px solid #292c35;
+
+        }
+
+
+        .section h2 {
+
+            font-size: 42px;
+
+            line-height: 1.1;
+
+            margin: 12px 0 15px;
+
+        }
+
+
+        .desc {
+
+            max-width: 760px;
+
+            color: #aeb4c2;
+
+        }
+
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .stat {
+
+            padding: 28px;
+
+            background: #101218;
+
+            border:
+                1px solid #292c35;
+
+        }
+
+
+        .stat b {
+
+            display: block;
+
+            font-size: 36px;
+
+            line-height: 1;
+
+        }
+
+
+        .stat span {
+
+            display: block;
+
+            margin-top: 8px;
+
+            color: #9298a6;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================
+           CORE AREAS
+        ========================== */
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .card {
+
+            padding: 28px;
+
+            background: #101218;
+
+            border:
+                1px solid #292c35;
+
+            min-height: 190px;
+
+        }
+
+
+        .card .num {
+
+            font-size: 11px;
+
+            color: #858b99;
+
+            letter-spacing: 2px;
+
+            font-weight: 700;
+
+        }
+
+
+        .card h3 {
+
+            margin: 18px 0 10px;
+
+            font-size: 23px;
+
+        }
+
+
+        .card p {
+
+            margin: 0;
+
+            color: #aeb4c2;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           PLANETS
+        ========================== */
+
+        .planet-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .planet {
+
+            padding: 22px;
+
+            background: #101218;
+
+            border:
+                1px solid #292c35;
+
+        }
+
+
+        .planet b {
+
+            font-size: 20px;
+
+        }
+
+
+        .planet small {
+
+            display: block;
+
+            color: #8f95a3;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =========================
+           FORMULA
+        ========================== */
+
+        .formula {
+
+            margin-top: 35px;
+
+            padding: 35px;
+
+            background: #101218;
+
+            border:
+                1px solid #292c35;
+
+        }
+
+
+        .formula strong {
+
+            display: block;
+
+            font-size: 30px;
+
+            margin: 8px 0;
+
+        }
+
+
+        .formula span {
+
+            color: #9ca2b0;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           RESEARCH
+        ========================== */
+
+        .note {
+
+            margin-top: 35px;
+
+            padding: 28px;
+
+            background: #101218;
+
+            border-left:
+                3px solid #ddd;
+
+            color: #b8bdc7;
+
+        }
+
+
+        .research-link {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            font-weight: 700;
+
+            border-bottom:
+                1px solid #ddd;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            padding: 35px 7%;
+
+            border-top:
+                1px solid #292c35;
+
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .stats {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .planet-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 560px) {
+
+            header {
+
+                padding: 18px 5%;
+
+            }
+
+
+            main {
+
+                width: 90%;
+
+            }
+
+
+            .hero {
+
+                min-height: 500px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 65px;
+
+                letter-spacing: -4px;
+
+            }
+
+
+            .stats,
+            .grid,
+            .planet-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .section {
+
+                padding: 65px 0;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <a
+            href="app.html"
+            class="logo"
+        >
+
+            SCIENCE STUDY
+
+            <span>
+                SCIENCE LEARNING APP
+            </span>
+
+        </a>
+
+
+        <a
+            href="app.html"
+            class="back"
+        >
+
+            ← SCIENCE STUDY
+
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="label">
+                APPLICATION · 13 · ASTRONOMY
+            </div>
+
+
+            <h1>
+
+                ASTRO<br>
+
+                <strong>NOMY</strong>
+
+            </h1>
+
+
+            <p>
+
+                우주와 천체의 구조와 운동을 탐구하고
+                행성, 별, 중성자별, 블랙홀과
+                시공간의 관계를 학습하는
+                천문학 공부 공간입니다.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+
+        <section class="section">
+
+            <div class="label">
+                ASTRONOMY · OVERVIEW
+            </div>
+
+
+            <h2>
+                우주를 구조적으로 이해하기
+            </h2>
+
+
+            <p class="desc">
+
+                천체를 단순히 관찰하는 것을 넘어,
+                중력과 운동, 빛, 시공간의 관점에서
+                우주의 현상을 연결해 학습합니다.
+
+            </p>
+
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <b>
+                        8
+                    </b>
+
+                    <span>
+                        태양계 행성
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <b>
+                        6
+                    </b>
+
+                    <span>
+                        핵심 천문학 분야
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <b>
+                        2
+                    </b>
+
+                    <span>
+                        핵심 이론
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <b>
+                        10
+                    </b>
+
+                    <span>
+                        연구 연결 번호
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CORE AREAS
+        ========================== -->
+
+        <section class="section">
+
+            <div class="label">
+                CORE AREAS
+            </div>
+
+
+            <h2>
+                천문학 핵심 분야
+            </h2>
+
+
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <div class="num">
+                        01 · PLANET
+                    </div>
+
+                    <h3>
+                        행성과 궤도
+                    </h3>
+
+                    <p>
+
+                        행성의 공전과 자전,
+                        궤도 운동을 중력과
+                        운동의 관점에서 학습합니다.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="num">
+                        02 · STAR
+                    </div>
+
+                    <h3>
+                        별과 항성
+                    </h3>
+
+                    <p>
+
+                        별의 탄생과 진화,
+                        에너지 생성과 항성의
+                        다양한 상태를 탐구합니다.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="num">
+                        03 · GALAXY
+                    </div>
+
+                    <h3>
+                        은하
+                    </h3>
+
+                    <p>
+
+                        별들이 모여 이루는
+                        은하의 구조와 우주에서의
+                        분포를 살펴봅니다.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="num">
+                        04 · GRAVITY
+                    </div>
+
+                    <h3>
+                        중력
+                    </h3>
+
+                    <p>
+
+                        천체의 운동과 궤도를
+                        결정하는 중력의 역할을
+                        물리학과 연결합니다.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="num">
+                        05 · NEUTRON STAR
+                    </div>
+
+                    <h3>
+                        중성자별
+                    </h3>
+
+                    <p>
+
+                        초고밀도 천체와 펄서의
+                        특징을 이해하고 강한
+                        중력 환경을 탐구합니다.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="num">
+                        06 · BLACK HOLE
+                    </div>
+
+                    <h3>
+                        블랙홀
+                    </h3>
+
+                    <p>
+
+                        강한 중력과 시공간의
+                        휘어짐이라는 관점에서
+                        블랙홀을 학습합니다.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SOLAR SYSTEM
+        ========================== -->
+
+        <section class="section">
+
+            <div class="label">
+                SOLAR SYSTEM
+            </div>
+
+
+            <h2>
+                태양계 행성
+            </h2>
+
+
+            <p class="desc">
+
+                태양을 중심으로 공전하는
+                8개 행성을 순서대로 확인합니다.
+
+            </p>
+
+
+            <div class="planet-grid">
+
+
+                <div class="planet">
+
+                    <b>
+                        수성
+                    </b>
+
+                    <small>
+                        Mercury · 1
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        금성
+                    </b>
+
+                    <small>
+                        Venus · 2
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        지구
+                    </b>
+
+                    <small>
+                        Earth · 3
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        화성
+                    </b>
+
+                    <small>
+                        Mars · 4
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        목성
+                    </b>
+
+                    <small>
+                        Jupiter · 5
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        토성
+                    </b>
+
+                    <small>
+                        Saturn · 6
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        천왕성
+                    </b>
+
+                    <small>
+                        Uranus · 7
+                    </small>
+
+                </div>
+
+
+                <div class="planet">
+
+                    <b>
+                        해왕성
+                    </b>
+
+                    <small>
+                        Neptune · 8
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PHYSICS CONNECTION
+        ========================== -->
+
+        <section class="section">
+
+            <div class="label">
+                ASTRONOMY · PHYSICS
+            </div>
+
+
+            <h2>
+                천체 운동과 물리학
+            </h2>
+
+
+            <p class="desc">
+
+                천문학에서 관찰되는 현상은
+                물리학의 법칙으로 설명할 수 있습니다.
+
+            </p>
+
+
+
+            <div class="formula">
+
+                <span>
+                    중력과 천체 운동
+                </span>
+
+
+                <strong>
+                    F = G × (m₁m₂ / r²)
+                </strong>
+
+
+                <span>
+
+                    두 질량 사이의 중력은
+                    질량의 곱에 비례하고
+                    거리의 제곱에 반비례합니다.
+
+                </span>
+
+            </div>
+
+
+
+            <div class="formula">
+
+                <span>
+                    특수상대성이론
+                </span>
+
+
+                <strong>
+                    Δt = γΔτ
+                </strong>
+
+
+                <span>
+
+                    빛에 가까운 속도로 움직이는
+                    관측자에게 나타나는
+                    시간 지연을 학습합니다.
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RESEARCH CONNECTION
+        ========================== -->
+
+        <section class="section">
+
+            <div class="label">
+                RESEARCH · 10
+            </div>
+
+
+            <h2>
+                10번 연구와 연결
+            </h2>
+
+
+            <p class="desc">
+
+                10번 연구에서 다룬 우주의 시공간,
+                특수상대성이론, 일반상대성이론,
+                중성자별과 펄서 등의 주제를
+                천문학 학습 내용으로 확장합니다.
+
+            </p>
+
+
+            <div class="note">
+
+                <strong>
+                    연구 자료 보기
+                </strong>
+
+
+                <br>
+
+
+                10번 연구 논문에서는
+                천문학과 물리학 이론을 바탕으로
+                우주의 시공간과 천체 현상을
+                탐구했습니다.
+
+
+                <br><br>
+
+
+                <a
+                    href="paper10.html"
+                    class="research-link"
+                >
+
+                    10번 연구 논문 자세히 보기 →
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        SCIENCE STUDY
+        · APPLICATION 13
+        · ASTRONOMY
+
+    </footer>
+
+
+</body>
+
+</html>
