@@ -3,7 +3,7 @@ const CACHE = 'science-study-mobile-v1';
 const PAGES = [
   './', './index.html', './app.html', './astronomy.html',
   './biology.html', './chemistry.html', './geology.html',
-  './physics.html', './paper10.html', './mobile.css',
+  './physics.html', './paper10.html', './quiz.html', './mobile.css',
   './mobile.js', './icon.svg', './manifest.webmanifest'
 ];
 self.addEventListener('install', (event) => {
