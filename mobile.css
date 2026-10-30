@@ -1,0 +1,54 @@
+/* SCIENCE STUDY: additive mobile layout; desktop designs remain unchanged. */
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+img, video, canvas, iframe, svg { max-width: 100%; }
+img, video { height: auto; }
+a, button, input, select, textarea { touch-action: manipulation; }
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #2b89df;
+  outline-offset: 3px;
+}
+@media (max-width: 768px) {
+  body { overflow-x: clip; }
+  header, .header-inner {
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  main, .inner, .hero-inner {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+  }
+  .hero { min-height: 0; padding-top: 58px; padding-bottom: 50px; }
+  .hero h1 {
+    font-size: clamp(2.8rem, 12vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+  }
+  .hero-description { font-size: 1rem; line-height: 1.65; }
+  .section, section { max-width: 100%; }
+  .section-title { font-size: clamp(1.6rem, 7vw, 2.5rem); letter-spacing: -0.025em; }
+  .cards, .subject-grid, .formula-grid, .process, .dgrid, .oregrid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .cards > *, .subject-grid > *, .formula-grid > *,
+  .process > *, .dgrid > *, .oregrid > *, .stats > * { min-width: 0; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+  input, select, textarea { max-width: 100%; font-size: 16px; }
+  button, input[type="button"], input[type="submit"] { min-height: 44px; }
+  pre, code { overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  header, .header-inner { padding-left: 12px; padding-right: 12px; }
+  main, .inner, .hero-inner { width: calc(100% - 24px); }
+  .hero h1 { font-size: clamp(2.3rem, 11vw, 3.8rem); }
+  .stats { grid-template-columns: minmax(0, 1fr) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
