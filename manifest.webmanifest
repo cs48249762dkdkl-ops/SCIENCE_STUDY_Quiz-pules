@@ -1,0 +1,19 @@
+{
+  "name": "SCIENCE STUDY — 과학 학습",
+  "short_name": "SCIENCE STUDY",
+  "description": "천문학, 물리학, 화학, 생물학, 지질학 학습",
+  "lang": "ko",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10131b",
+  "theme_color": "#10131b",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
