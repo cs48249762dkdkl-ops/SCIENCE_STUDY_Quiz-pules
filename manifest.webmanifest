@@ -2,12 +2,25 @@
   "name": "SCIENCE STUDY · Astronomy",
   "short_name": "SCIENCE STUDY",
   "lang": "ko",
+  "id": "/astronomy.html",
   "start_url": "/astronomy.html",
   "scope": "/",
   "display": "standalone",
   "background_color": "#08090d",
   "theme_color": "#08090d",
   "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "/icon.svg",
       "sizes": "any",

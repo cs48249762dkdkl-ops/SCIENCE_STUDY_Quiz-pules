@@ -1,4 +1,4 @@
-const CACHE_NAME = 'science-study-astronomy-v1';
+const CACHE_NAME = 'science-study-astronomy-v2';
 const APP_SHELL = [
   '/',
   '/app.html',
@@ -7,6 +7,8 @@ const APP_SHELL = [
   '/pwa.js',
   '/manifest.webmanifest',
   '/icon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 self.addEventListener('install', (event) => {
