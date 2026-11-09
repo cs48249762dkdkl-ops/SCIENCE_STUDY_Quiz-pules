@@ -475,6 +475,168 @@
 
         }
 
+        /* =========================
+           DEEP STUDY · OFFLINE-SAFE
+        ========================== */
+
+        .lesson-grid,
+        .source-grid,
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .lesson,
+        .source-card,
+        .formula-card,
+        .review-card {
+            padding: 25px;
+            background: #101218;
+            border: 1px solid #292c35;
+        }
+
+        .lesson h3,
+        .source-card h3,
+        .formula-card h3,
+        .review-card h3 {
+            margin: 8px 0 10px;
+            font-size: 21px;
+        }
+
+        .lesson p,
+        .source-card p,
+        .formula-card p,
+        .review-card p,
+        .lesson li {
+            color: #b8bdc7;
+            font-size: 14px;
+        }
+
+        .lesson ul {
+            padding-left: 20px;
+            margin: 12px 0 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 7px;
+            border: 1px solid #444a57;
+            color: #aeb4c2;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .formula-card code {
+            display: block;
+            margin: 13px 0;
+            color: #fff;
+            font-size: 21px;
+            overflow-wrap: anywhere;
+        }
+
+        .example {
+            padding: 12px;
+            border-left: 2px solid #8ea8ff;
+            background: #161a24;
+            color: #cbd2e4;
+            font-size: 13px;
+        }
+
+        .calculator {
+            margin-top: 22px;
+            padding: 18px;
+            background: #151821;
+            border: 1px solid #323846;
+        }
+
+        .calculator label {
+            display: block;
+            margin: 10px 0;
+            color: #b8bdc7;
+            font-size: 13px;
+        }
+
+        .calculator input,
+        .review-card textarea {
+            width: 100%;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #464d5b;
+            border-radius: 0;
+            background: #08090d;
+            color: #f4f4f4;
+            font: inherit;
+        }
+
+        button.study-button {
+            margin-top: 8px;
+            padding: 11px 15px;
+            border: 1px solid #dbe3ff;
+            background: #dbe3ff;
+            color: #101218;
+            cursor: pointer;
+            font-weight: 800;
+        }
+
+        button.study-button:hover,
+        button.study-button:focus-visible {
+            background: #fff;
+        }
+
+        .result {
+            min-height: 1.7em;
+            margin: 12px 0 0;
+            color: #dbe3ff;
+            font-weight: 700;
+        }
+
+        .quiz-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .quiz-item {
+            padding: 20px;
+            border: 1px solid #292c35;
+            background: #101218;
+        }
+
+        .quiz-item legend {
+            padding: 0 5px;
+            font-weight: 800;
+        }
+
+        .quiz-item label {
+            display: block;
+            margin: 9px 0;
+            color: #c5c9d3;
+            cursor: pointer;
+        }
+
+        .quiz-feedback {
+            margin: 9px 0 0;
+            color: #aeb4c2;
+            font-size: 13px;
+        }
+
+        .quiz-feedback.correct { color: #a6dfb1; }
+        .quiz-feedback.incorrect { color: #ffc3c3; }
+
+        .review-card textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .save-status {
+            margin-left: 10px;
+            color: #a6dfb1;
+            font-size: 13px;
+        }
+
 
         /* =========================
            FOOTER
@@ -523,6 +685,12 @@
                 grid-template-columns:
                     1fr 1fr;
 
+            }
+
+            .lesson-grid,
+            .source-grid,
+            .formula-grid {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -1109,6 +1277,61 @@
 
 
         <!-- =========================
+             PLANET LESSONS
+        ========================== -->
+
+        <section class="section" id="planet-lessons">
+            <div class="label">DEEP LESSONS · SOLAR SYSTEM</div>
+            <h2>8개 행성, 각각을 하나의 강의로</h2>
+            <p class="desc">거리·크기·대기·자전·위성은 서로 연결되어 있습니다. 숫자는 대표적인 근사값이며, 단위와 비교 기준을 함께 확인하세요.</p>
+            <div class="lesson-grid">
+                <article class="lesson"><span class="tag">01 · TERRESTRIAL</span><h3>수성</h3><p>태양에 가장 가까운 암석 행성입니다. 거의 대기가 없어 낮과 밤의 표면 온도 차가 매우 큽니다.</p><ul><li>공전: 약 88일</li><li>공명 자전: 3회 자전 / 2회 공전</li><li>핵심 질문: 왜 충돌구가 오래 남을까?</li></ul></article>
+                <article class="lesson"><span class="tag">02 · GREENHOUSE</span><h3>금성</h3><p>이산화탄소가 주성분인 두꺼운 대기와 강한 온실효과를 가진 암석 행성입니다.</p><ul><li>공전: 약 225일</li><li>매우 느린 역행 자전</li><li>핵심 질문: 대기 조성이 복사 평형을 어떻게 바꿀까?</li></ul></article>
+                <article class="lesson"><span class="tag">03 · HABITABLE WORLD</span><h3>지구</h3><p>액체 물, 판 구조 운동, 자기장, 대기가 상호작용하는 암석 행성입니다.</p><ul><li>공전: 약 365.25일</li><li>자전축 기울기: 약 23.4°</li><li>핵심 질문: 계절은 태양과의 거리 때문일까?</li></ul></article>
+                <article class="lesson"><span class="tag">04 · RED PLANET</span><h3>화성</h3><p>얇은 이산화탄소 대기와 극관을 가진 행성으로, 과거 물의 흔적을 지질 기록에서 찾습니다.</p><ul><li>공전: 약 687일</li><li>위성: 포보스·데이모스</li><li>핵심 질문: 계곡·삼각주는 무엇을 말해 줄까?</li></ul></article>
+                <article class="lesson"><span class="tag">05 · GAS GIANT</span><h3>목성</h3><p>가장 큰 행성입니다. 빠른 자전, 강한 자기장, 대적점과 갈릴레이 위성계가 중요한 관찰 대상입니다.</p><ul><li>공전: 약 11.9년</li><li>주성분: 수소·헬륨</li><li>핵심 질문: 이오의 화산 활동은 왜 강할까?</li></ul></article>
+                <article class="lesson"><span class="tag">06 · RINGS</span><h3>토성</h3><p>얼음 입자가 주를 이루는 고리와 다양한 위성계를 지닌 거대 행성입니다.</p><ul><li>공전: 약 29.5년</li><li>낮은 평균 밀도</li><li>핵심 질문: 고리 입자는 왜 납작한 원반을 이룰까?</li></ul></article>
+                <article class="lesson"><span class="tag">07 · ICE GIANT</span><h3>천왕성</h3><p>메탄 때문에 푸르게 보이는 얼음 거대 행성입니다. 자전축이 거의 옆으로 누워 있습니다.</p><ul><li>공전: 약 84년</li><li>자전축 기울기: 약 98°</li><li>핵심 질문: 극단적인 계절은 어떻게 생길까?</li></ul></article>
+                <article class="lesson"><span class="tag">08 · OUTER SYSTEM</span><h3>해왕성</h3><p>태양계의 여덟 번째 행성입니다. 강한 바람과 해왕성 횡단 천체 연구의 기준점이 됩니다.</p><ul><li>공전: 약 164.8년</li><li>대표 위성: 트리톤</li><li>핵심 질문: 멀리서도 대기가 활발할 수 있는 이유는?</li></ul></article>
+            </div>
+        </section>
+
+        <!-- =========================
+             COSMIC FRONTIER
+        ========================== -->
+
+        <section class="section" id="cosmic-frontier">
+            <div class="label">COSMIC FRONTIER · 7 LESSONS</div>
+            <h2>별에서 보이지 않는 우주까지</h2>
+            <p class="desc">관측값과 모형을 구분해 읽는 연습을 합니다. 아직 직접 검출되지 않은 대상은 ‘증거’와 ‘가설’을 구분해 기록하세요.</p>
+            <div class="lesson-grid">
+                <article class="lesson"><span class="tag">STARS</span><h3>항성의 탄생과 진화</h3><p>분자 구름의 중력 수축으로 원시별이 만들어지고, 중심핵 융합이 별을 지탱합니다. 질량은 별의 밝기·수명·최후를 크게 좌우합니다.</p><ul><li>H-R 도표에서 온도와 광도 읽기</li><li>주계열 이후: 적색거성·초신성·잔해</li></ul></article>
+                <article class="lesson"><span class="tag">GALAXIES</span><h3>은하와 우주 거리 사다리</h3><p>은하는 별·가스·먼지·암흑물질의 중력적으로 묶인 계입니다. 세페이드 변광성, Ia형 초신성, 적색편이는 거리를 추정하는 서로 다른 단서입니다.</p><ul><li>우리은하: 막대나선은하</li><li>주의: 적색편이는 속도·팽창 해석에 맥락이 필요</li></ul></article>
+                <article class="lesson"><span class="tag">EXOPLANETS</span><h3>외계행성</h3><p>통과법은 별빛의 미세한 감소를, 시선속도법은 별 스펙트럼의 도플러 이동을 이용합니다. 둘은 행성의 반지름·최소 질량 같은 서로 다른 정보를 줍니다.</p><ul><li>통과 깊이 ≈ (행성 반지름/별 반지름)²</li><li>‘거주 가능’은 생명 존재의 증거가 아님</li></ul></article>
+                <article class="lesson"><span class="tag">SMALL BODIES</span><h3>소행성대·카이퍼 벨트·오르트 구름</h3><p>소행성대는 주로 화성과 목성 사이, 카이퍼 벨트는 해왕성 바깥의 원반형 영역입니다. 오르트 구름은 장주기 혜성의 매우 먼 구형 저장고라는 모형입니다.</p><ul><li>왜 목성의 중력이 소행성대에 영향을 줄까?</li><li>오르트 구름은 직접 영상으로 확인된 고리가 아님</li></ul></article>
+                <article class="lesson"><span class="tag">NEUTRINOS</span><h3>중성미자와 IceCube</h3><p>중성미자는 전하가 없고 물질과 거의 상호작용하지 않아 천체 내부 정보를 전할 수 있습니다. IceCube는 남극 빙하 속 광검출기로 체렌코프 빛을 관측합니다.</p><ul><li>다중전령 천문학: 빛·중력파·중성미자</li><li>핵심 질문: ‘거의 상호작용하지 않음’은 검출을 왜 어렵게 할까?</li></ul></article>
+                <article class="lesson"><span class="tag">DARK MATTER</span><h3>암흑물질: 증거와 미해결 질문</h3><p>은하 회전 곡선, 중력렌즈, 우주배경복사·대규모 구조 관측은 보통 물질만으로는 설명하기 어려운 질량 성분을 가리킵니다. 정체는 아직 확정되지 않았습니다.</p><ul><li>‘보이지 않는다’와 ‘존재하지 않는다’는 다릅니다.</li><li>관측 증거와 후보 입자를 분리해 읽으세요.</li></ul></article>
+                <article class="lesson"><span class="tag">BLACK HOLES</span><h3>블랙홀과 강한 중력</h3><p>사건지평선은 빛조차 바깥으로 빠져나오기 어려운 경계입니다. 블랙홀 자체가 아니라 주변 가스·별의 운동·중력파·그림자 관측이 증거를 제공합니다.</p><ul><li>슈바르츠실트 반지름: 질량에 비례</li><li>블랙홀은 우주를 ‘빨아들이는 진공청소기’가 아닙니다.</li></ul></article>
+            </div>
+        </section>
+
+        <!-- =========================
+             FORMULAS
+        ========================== -->
+
+        <section class="section" id="calculations">
+            <div class="label">FORMULAS · CHECK THE UNITS</div>
+            <h2>공식과 계산 예제</h2>
+            <p class="desc">공식은 숫자를 넣는 도구이기 전에 가정과 단위를 드러내는 언어입니다. 아래 계산기는 학습용 근사 계산이며, 입력 데이터의 출처를 항상 적으세요.</p>
+            <div class="formula-grid">
+                <article class="formula-card"><span class="tag">ORBIT</span><h3>케플러 제3법칙</h3><code>P² = a³</code><p>태양 질량이 지배적인 경우, 공전주기 P(년)와 장반경 a(AU)의 근사 관계입니다.</p><p class="example">예: a = 4 AU이면 P = √(4³) = 8년입니다.</p><div class="calculator"><label>장반경 a (AU)<input id="kepler-a" type="number" min="0.001" step="0.001" value="4"></label><button class="study-button" type="button" id="kepler-run">공전주기 계산</button><p class="result" id="kepler-result" aria-live="polite"></p></div></article>
+                <article class="formula-card"><span class="tag">LIGHT</span><h3>거리 모듈러스</h3><code>m − M = 5 log₁₀(d / 10 pc)</code><p>겉보기등급 m과 절대등급 M의 차로 거리를 추정합니다. 소광·보정은 이 간단한 식에 포함되지 않습니다.</p><p class="example">예: m−M=5이면 d=100 pc입니다.</p><div class="calculator"><label>거리 모듈러스 m − M<input id="distance-modulus" type="number" step="0.01" value="5"></label><button class="study-button" type="button" id="distance-run">거리 계산</button><p class="result" id="distance-result" aria-live="polite"></p></div></article>
+                <article class="formula-card"><span class="tag">GRAVITY</span><h3>탈출속도</h3><code>vₑ = √(2GM / r)</code><p>질량 M인 천체의 중심에서 거리 r일 때의 이상화된 탈출속도입니다. 대기 저항과 자전은 무시합니다.</p><p class="example">지구 표면에서는 약 11.2 km/s입니다. ‘우주로 곧장 사라지는 속도’가 아니라 중력을 이길 최소 에너지 조건입니다.</p></article>
+                <article class="formula-card"><span class="tag">RELATIVITY</span><h3>시간 지연</h3><code>Δt = γΔτ, γ = 1 / √(1 − v²/c²)</code><p>특수상대론의 시간 지연 식입니다. 관성계·빛의 속도·고속 조건을 명확히 하며, 일상 속도에서는 효과가 매우 작습니다.</p><p class="example">v=0.8c이면 γ≈1.67: 움직이는 시계의 고유시간 1시간은 다른 관성계에서 약 1.67시간으로 비교됩니다.</p></article>
+            </div>
+        </section>
+
+        <!-- =========================
              RESEARCH CONNECTION
         ========================== -->
 
@@ -1164,6 +1387,36 @@
 
             </div>
 
+            <div class="source-grid" aria-label="검증 가능한 천문학 연구 자료">
+                <article class="source-card"><span class="tag">DATA · NASA</span><h3>NASA Solar System Exploration</h3><p>행성·위성·소천체의 임무·기초 자료를 출발점으로 확인합니다.</p><a class="research-link" href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">공식 자료 열기 ↗</a></article>
+                <article class="source-card"><span class="tag">CATALOG · NASA</span><h3>NASA Exoplanet Archive</h3><p>외계행성 관측·카탈로그 데이터를 확인하고, 발견 방식과 파라미터를 비교해 보세요.</p><a class="research-link" href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">아카이브 열기 ↗</a></article>
+                <article class="source-card"><span class="tag">PAPER · ICECUBE</span><h3>고에너지 우주 중성미자</h3><p>IceCube Collaboration의 2013년 Science 논문은 고에너지 천체물리 중성미자 증거를 보고했습니다.</p><a class="research-link" href="https://doi.org/10.1126/science.1242856" target="_blank" rel="noopener noreferrer">논문 DOI 열기 ↗</a></article>
+                <article class="source-card"><span class="tag">PAPER · EHT</span><h3>M87* 블랙홀 그림자</h3><p>Event Horizon Telescope Collaboration의 2019년 결과 논문입니다. 이미지와 모형 해석을 함께 읽으세요.</p><a class="research-link" href="https://doi.org/10.3847/2041-8213/ab0ec7" target="_blank" rel="noopener noreferrer">논문 DOI 열기 ↗</a></article>
+                <article class="source-card"><span class="tag">MISSION · ESA</span><h3>Gaia 과학 자료</h3><p>유럽우주국 Gaia 미션은 별의 위치·거리·운동을 이용해 우리은하를 지도화합니다.</p><a class="research-link" href="https://www.cosmos.esa.int/web/gaia" target="_blank" rel="noopener noreferrer">ESA Gaia 열기 ↗</a></article>
+                <article class="source-card"><span class="tag">REVIEW · PLANCK</span><h3>우주론 모수와 암흑물질</h3><p>Planck 2018 결과는 우주배경복사로부터 우주론 모수를 제약한 대표 연구입니다.</p><a class="research-link" href="https://doi.org/10.1051/0004-6361/201833910" target="_blank" rel="noopener noreferrer">논문 DOI 열기 ↗</a></article>
+            </div>
+
+        </section>
+
+        <!-- =========================
+             REVIEW · QUIZ · NOTES
+        ========================== -->
+
+        <section class="section" id="review">
+            <div class="label">REVIEW · QUIZ · LOCAL NOTES</div>
+            <h2>스스로 설명하고 기록하기</h2>
+            <p class="desc">퀴즈 답과 노트는 이 기기의 브라우저에만 저장됩니다. 서버로 전송되지 않으며, 브라우저 데이터 삭제·기기 변경 시 복구되지 않습니다.</p>
+            <div class="quiz-list" id="astronomy-quiz" aria-live="polite"></div>
+            <p class="result" id="quiz-score" aria-live="polite"></p>
+            <button class="study-button" type="button" id="quiz-check">퀴즈 채점</button>
+            <div class="review-card" style="margin-top:35px;">
+                <span class="tag">MY LEARNING NOTE</span>
+                <h3>관측 · 근거 · 질문을 구분해 적기</h3>
+                <p>예: “통과 깊이가 작다(관측)” / “행성이 작을 수 있다(해석)” / “별점 활동은 보정했는가?(질문)”</p>
+                <label for="astronomy-note">나의 천문학 노트</label>
+                <textarea id="astronomy-note" maxlength="8000" placeholder="오늘 이해한 개념, 출처, 다시 확인할 질문을 기록하세요."></textarea>
+                <button class="study-button" type="button" id="note-save">이 기기에 노트 저장</button><span class="save-status" id="note-status" aria-live="polite"></span>
+            </div>
         </section>
 
 
@@ -1183,7 +1436,79 @@
 
     </footer>
 
+    <script>
+        (() => {
+            const storagePrefix = "science-study:astronomy:v1:";
+            const questions = [
+                { prompt: "태양 질량이 지배적일 때, 장반경 4 AU인 천체의 공전주기 근사값은?", options: ["2년", "4년", "8년", "16년"], answer: 2, explain: "케플러 제3법칙 P²=a³에서 P=√64=8년입니다." },
+                { prompt: "통과법이 외계행성에 대해 직접 알려 주는 대표 정보는 무엇인가요?", options: ["별의 나이만", "행성 반지름의 상대적 크기", "행성의 실제 질량만", "행성 표면 사진"], answer: 1, explain: "통과 깊이는 행성과 별의 반지름 비의 제곱과 관련됩니다." },
+                { prompt: "오르트 구름에 대한 가장 적절한 설명은 무엇인가요?", options: ["목성과 화성 사이의 띠", "해왕성 안쪽의 고리", "장주기 혜성의 먼 구형 저장고라는 모형", "토성 고리의 바깥 부분"], answer: 2, explain: "오르트 구름은 매우 먼 거리의 구형 저장고로 제안된 모형이며 직접 영상으로 확인된 띠가 아닙니다." },
+                { prompt: "IceCube는 주로 무엇을 관측해 고에너지 중성미자 사건을 연구하나요?", options: ["전파 망원경의 전파", "빙하 속 체렌코프 빛", "행성의 적외선 사진", "태양 흑점 수"], answer: 1, explain: "중성미자 상호작용에서 생긴 입자가 빙하 속에서 만드는 체렌코프 빛을 광검출기로 측정합니다." },
+                { prompt: "암흑물질에 관한 문장으로 가장 과학적인 것은 무엇인가요?", options: ["정체가 확정되었다", "관측 증거가 있으나 정체는 미해결이다", "망원경으로 보면 즉시 알 수 있다", "암흑에너지를 뜻한다"], answer: 1, explain: "여러 중력 관측은 추가 질량 성분을 지지하지만, 입자적 정체는 아직 확정되지 않았습니다." },
+                { prompt: "블랙홀 존재를 연구하는 관측 증거로 적절한 것은 무엇인가요?", options: ["블랙홀 표면의 사진", "주변 별·가스 운동과 중력파", "모든 빛이 사라짐", "망원경을 끄는 것"], answer: 1, explain: "주변 물질의 운동, 방출, 중력파 및 그림자 관측이 강한 증거를 제공합니다." }
+            ];
+
+            const quizRoot = document.getElementById("astronomy-quiz");
+            const savedAnswers = JSON.parse(localStorage.getItem(storagePrefix + "answers") || "{}");
+            quizRoot.innerHTML = questions.map((question, qIndex) => `
+                <fieldset class="quiz-item" data-question="${qIndex}">
+                    <legend>${qIndex + 1}. ${question.prompt}</legend>
+                    ${question.options.map((option, optionIndex) => `<label><input type="radio" name="astronomy-q-${qIndex}" value="${optionIndex}" ${savedAnswers[qIndex] === optionIndex ? "checked" : ""}> ${option}</label>`).join("")}
+                    <p class="quiz-feedback" id="quiz-feedback-${qIndex}"></p>
+                </fieldset>`).join("");
+
+            quizRoot.addEventListener("change", () => {
+                const next = {};
+                questions.forEach((_, index) => {
+                    const selected = document.querySelector(`input[name="astronomy-q-${index}"]:checked`);
+                    if (selected) next[index] = Number(selected.value);
+                });
+                localStorage.setItem(storagePrefix + "answers", JSON.stringify(next));
+            });
+
+            document.getElementById("quiz-check").addEventListener("click", () => {
+                let score = 0;
+                questions.forEach((question, index) => {
+                    const selected = document.querySelector(`input[name="astronomy-q-${index}"]:checked`);
+                    const feedback = document.getElementById(`quiz-feedback-${index}`);
+                    if (!selected) {
+                        feedback.textContent = "답을 고른 뒤 해설을 확인하세요.";
+                        feedback.className = "quiz-feedback";
+                    } else if (Number(selected.value) === question.answer) {
+                        score += 1;
+                        feedback.textContent = "정답. " + question.explain;
+                        feedback.className = "quiz-feedback correct";
+                    } else {
+                        feedback.textContent = "다시 확인해 보세요. " + question.explain;
+                        feedback.className = "quiz-feedback incorrect";
+                    }
+                });
+                document.getElementById("quiz-score").textContent = `결과: ${score} / ${questions.length} · 해설을 읽고 근거를 한 문장으로 다시 써 보세요.`;
+            });
+
+            const note = document.getElementById("astronomy-note");
+            note.value = localStorage.getItem(storagePrefix + "note") || "";
+            document.getElementById("note-save").addEventListener("click", () => {
+                localStorage.setItem(storagePrefix + "note", note.value);
+                document.getElementById("note-status").textContent = "저장했습니다.";
+            });
+
+            document.getElementById("kepler-run").addEventListener("click", () => {
+                const a = Number(document.getElementById("kepler-a").value);
+                const output = document.getElementById("kepler-result");
+                output.textContent = Number.isFinite(a) && a > 0 ? `근사 공전주기: ${Math.sqrt(a ** 3).toFixed(2)}년` : "0보다 큰 장반경(AU)을 입력하세요.";
+            });
+
+            document.getElementById("distance-run").addEventListener("click", () => {
+                const modulus = Number(document.getElementById("distance-modulus").value);
+                const output = document.getElementById("distance-result");
+                output.textContent = Number.isFinite(modulus) ? `근사 거리: ${(10 * 10 ** (modulus / 5)).toPrecision(4)} pc` : "숫자를 입력하세요.";
+            });
+        })();
+    </script>
+
 
 </body>
 
 </html>
+
