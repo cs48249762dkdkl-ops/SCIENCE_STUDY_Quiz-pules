@@ -92,7 +92,7 @@ function externalResult({ source, kind, title, description, publishedAt, link, r
     summaryKo: summaryKo || `${source}의 공식 자료입니다. 원문 링크에서 세부 내용을 확인하세요.`,
     publishedAt: dateOnly(publishedAt),
     link,
-    translation: '한국어 요약 제공 · 원문 번역은 브라우저 번역 기능 이용',
+    translation: '한국어 자료 안내 제공 · 원문 초록 번역 미제공',
     relevance,
   };
 }
@@ -160,7 +160,7 @@ async function searchArxiv(query) {
       title,
       description: summary || 'arXiv에 공개된 연구 초록입니다.',
       publishedAt: published,
-      link: id,
+      link: id.replace(/^http:/iu, 'https:'),
       relevance: 36 + scoreText(query, title, summary),
       summaryKo: `arXiv에 공개된 천문학 연구 논문입니다. 제목·초록은 원문 기준이며, 원문 링크에서 전체 논문을 확인할 수 있습니다.`,
     })];
