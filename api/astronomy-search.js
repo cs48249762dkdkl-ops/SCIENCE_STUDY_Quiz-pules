@@ -190,7 +190,7 @@ async function searchExoplanetArchive(query, originalQuery) {
       title: row.pl_name,
       description: details || 'NASA Exoplanet Archive의 공개 행성계 항목입니다.',
       publishedAt: row.disc_pubdate,
-      link: 'https://exoplanetarchive.ipac.caltech.edu/',
+      link: `https://exoplanetarchive.ipac.caltech.edu/overview/${encodeURIComponent(row.hostname || row.pl_name)}`,
       relevance: 34 + scoreText(originalQuery, row.pl_name, details),
       summaryKo: `NASA Exoplanet Archive의 공개 카탈로그 항목입니다${row.hostname ? ` · 모항성: ${row.hostname}` : ''}${row.discoverymethod ? ` · 발견 방법: ${row.discoverymethod}` : ''}.`,
     })];
