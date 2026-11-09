@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">SCIENCE STUDY astronomy</title>
+  <rect width="512" height="512" rx="96" fill="#08090d"/>
+  <circle cx="256" cy="256" r="92" fill="#dbe3ff"/>
+  <ellipse cx="256" cy="256" rx="190" ry="70" fill="none" stroke="#8ea8ff" stroke-width="22"/>
+  <circle cx="408" cy="206" r="20" fill="#ffd299"/>
+  <circle cx="177" cy="176" r="11" fill="#ffffff"/>
+</svg>
+
