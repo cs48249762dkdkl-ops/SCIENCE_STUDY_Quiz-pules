@@ -8,6 +8,7 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;background:#f5f5f2;color:#111}
 a{color:inherit;text-decoration:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 header{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 7%;background:rgba(245,245,242,.96);border-bottom:1px solid #ddd}
 .logo{font-size:22px;font-weight:800;letter-spacing:1px} .logo span{display:block;margin-top:4px;font-size:10px;font-weight:500;letter-spacing:2px;color:#666}
 .back{font-size:13px;font-weight:700} .back:hover{text-decoration:underline}
@@ -41,9 +42,10 @@ main{width:min(1180px,90%);margin:auto}
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px} .process article{padding:25px;background:#fff;border:1px solid #ddd}
 .process b{display:block;font-size:24px;margin-bottom:12px} .process p{margin:0;color:#666;line-height:1.7;font-size:14px}
 .note{margin-top:25px;padding:20px;background:#e9e9e5;color:#666;line-height:1.7;font-size:13px}
+.unified-search{background:#101817;color:#f6f7f3;margin:0 calc((90vw - 100%)/-2);padding:80px max(5%,calc((100vw - 1180px)/2))}.unified-search .label{color:#b8c8bd}.unified-search h2{color:#fff}.unified-search .desc{color:#d0d9d2}.geo-search-form{display:flex;gap:10px;margin-top:28px}.geo-search-form input,.geo-search-form select{min-height:54px;border:1px solid #607268;background:#fff;color:#111;padding:0 16px;font-size:15px}.geo-search-form input{flex:1}.geo-search-form input:focus,.geo-search-form select:focus{outline:3px solid #b8d75d;outline-offset:2px}.geo-search-form button{min-height:54px;border:1px solid #b8d75d;background:#b8d75d;color:#112018;padding:0 20px;font-weight:800;cursor:pointer}.geo-search-status{min-height:24px;margin:16px 0 8px;color:#d0d9d2;font-size:13px;line-height:1.5}.geo-search-status.error{color:#ffd2b9}.geo-search-summary{margin:0 0 16px;color:#fff;font-size:15px;font-weight:700}.geo-search-notice{margin:0 0 16px;border-left:3px solid #b8d75d;padding:10px 12px;background:#ffffff0e;color:#dce7dc;font-size:12px;line-height:1.6}.geo-result-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.geo-result-card{background:#fff;color:#111;border:1px solid #cad2ca;padding:22px}.geo-result-card.external-result{background:#f4f8f2}.geo-result-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.geo-result-header h3{margin:0;font-size:24px;letter-spacing:-1px}.geo-english{margin:5px 0 0;color:#5c625d;font-size:13px}.geo-badges{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}.geo-badge{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap}.geo-badge.internal{background:#15251d;color:#e3f7b2}.geo-badge.external{background:#15334c;color:#d9f0ff}.geo-badge.type{background:#e5e8e3;color:#354137}.geo-badge.source-badge{background:#e8f0de;color:#35512b}.geo-result-description{margin:15px 0;color:#414842;line-height:1.65;font-size:14px}.geo-field{border-top:1px solid #e0e4df;padding:10px 0}.geo-field span{display:block;margin-bottom:4px;color:#647167;font-size:11px;font-weight:800}.geo-field strong{display:block;color:#1b211c;font-size:13px;line-height:1.65}.geo-caveat{margin:14px 0 0;padding:10px;background:#f0f2ed;color:#5a645c;font-size:12px;line-height:1.6}.geo-card-footer{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:14px}.geo-sources-label{font-size:11px;font-weight:800;color:#59635a}.geo-source,.geo-open-source{border-bottom:1px solid currentColor;color:#315c39;font-size:12px;font-weight:700}.geo-open-source{display:inline-block;margin-top:16px}.geo-empty{grid-column:1/-1;padding:28px;background:#fff;color:#202720;text-align:center}.geo-empty p{margin:9px 0 0;color:#586058;font-size:13px;line-height:1.6}
 footer{padding:35px 7%;border-top:1px solid #ddd;color:#777;font-size:12px}
 @media(max-width:950px){.grid{grid-template-columns:repeat(4,1fr)}.oregrid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){header{padding:18px 5%}main{width:90%}.hero h1{font-size:58px;letter-spacing:-3px}.controls{flex-direction:column}.grid{grid-template-columns:repeat(2,1fr)}.oregrid,.process,.dgrid{grid-template-columns:1fr}.detailhead{flex-direction:column}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){header{padding:18px 5%}main{width:90%}.hero h1{font-size:58px;letter-spacing:-3px}.controls,.geo-search-form{flex-direction:column}.grid{grid-template-columns:repeat(2,1fr)}.oregrid,.process,.dgrid,.geo-result-list{grid-template-columns:1fr}.detailhead{flex-direction:column}.stats{grid-template-columns:1fr 1fr}.unified-search{margin:0 -5.55%;padding:55px 5.55%}.geo-result-card{padding:18px}.geo-result-header{flex-direction:column}.geo-badges{justify-content:flex-start}}
 </style>
 </head>
 <body>
@@ -69,6 +71,29 @@ footer{padding:35px 7%;border-top:1px solid #ddd;color:#777;font-size:12px}
 <div class="stat"><b>4</b><span>광상 형성 과정</span></div>
 <div class="stat"><b>∞</b><span>확장 가능한 구조</span></div>
 </div>
+</section>
+
+<section class="section unified-search" id="geology-unified-search" aria-labelledby="geology-unified-search-title">
+<div class="label">ONE SEARCH · INTERNAL + EXTERNAL</div>
+<h2 id="geology-unified-search-title">지질학 통합 검색</h2>
+<p class="desc">광물·광석·암석·지질학 개념을 한 번에 찾습니다. 내부 학습 데이터와 Mindat·RRUFF·USGS·KIGAM·BGS의 검증 가능한 원문 자료가 하나의 결과 목록에 함께 표시됩니다.</p>
+<form class="geo-search-form" id="geology-unified-search-form" role="search">
+<label class="sr-only" for="geology-unified-search-input">지질학 통합 검색어</label>
+<input id="geology-unified-search-input" type="search" autocomplete="off" placeholder="예: 석영, Quartz, Fe3O4, 황동석, 판 구조론, 한국 지질" aria-describedby="geology-unified-search-status">
+<label class="sr-only" for="geology-unified-search-filter">결과 분류</label>
+<select id="geology-unified-search-filter">
+<option value="all">전체</option>
+<option value="mineral">광물</option>
+<option value="ore">광석</option>
+<option value="rock">암석</option>
+<option value="geology">지질학</option>
+</select>
+<button type="submit">통합 검색</button>
+</form>
+<p class="geo-search-status" id="geology-unified-search-status" aria-live="polite"></p>
+<p class="geo-search-summary" id="geology-unified-search-summary"></p>
+<p class="geo-search-notice" id="geology-unified-search-notice" hidden></p>
+<div class="geo-result-list" id="geology-unified-search-results"></div>
 </section>
 
 <section class="section" id="elements">
@@ -311,5 +336,7 @@ category.addEventListener("change", render);
 document.getElementById("close").addEventListener("click", () => detail.classList.remove("show"));
 render();
 </script>
+<script src="geology-search.js" defer></script>
 </body>
 </html>
+

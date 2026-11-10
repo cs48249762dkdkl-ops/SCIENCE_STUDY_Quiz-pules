@@ -1,9 +1,16 @@
-const CACHE_NAME = 'science-study-astronomy-v2';
+const CACHE_NAME = 'science-study-core-v3';
 const APP_SHELL = [
   '/',
+  '/index.html',
   '/app.html',
   '/astronomy.html',
   '/astronomy-search.js',
+  '/geology.html',
+  '/geology-search.js',
+  '/biology.html',
+  '/chemistry.html',
+  '/physics.html',
+  '/quiz.html',
   '/pwa.js',
   '/manifest.webmanifest',
   '/icon.svg',
@@ -16,7 +23,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key.startsWith('science-study-astronomy-') && key !== CACHE_NAME).map((key) => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key.startsWith('science-study-') && key !== CACHE_NAME).map((key) => caches.delete(key)))).then(() => self.clients.claim()));
 });
 
 self.addEventListener('fetch', (event) => {
@@ -34,7 +41,7 @@ self.addEventListener('fetch', (event) => {
       const copy = response.clone();
       caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
       return response;
-    }).catch(() => caches.match(request).then((cached) => cached || caches.match('/astronomy.html'))));
+    }).catch(() => caches.match(request).then((cached) => cached || caches.match('/app.html'))));
     return;
   }
 
@@ -46,4 +53,5 @@ self.addEventListener('fetch', (event) => {
     return response;
   })));
 });
+
 
