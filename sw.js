@@ -1,4 +1,4 @@
-const CACHE_NAME = 'science-study-core-v3';
+const CACHE_NAME = 'science-study-core-v3-nexus-sync-v2';
 const APP_SHELL = [
   '/',
   '/index.html',
